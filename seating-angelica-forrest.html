@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Seating Plan — Angelica & Forrest | Our Little Wedding</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   OLW SEATING TOOL — Angelica & Forrest
+   The Vault Garden — Alcove
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #222D44;
+  --rose-gold: #C48F7F;
+  --rose-gold-light: #F4DDD5;
+  --rose-gold-lighter: #FAE8E1;
+  --rose-gold-dark: #9B6B5C;
+  --champagne: #FAF8F5;
+  --platinum: #EAE9E5;
+  --onyx: #3D3D3D;
+  --onyx-light: #777777;
+  --white: #FFFFFF;
+  --success: #5C8F6B;
+  --warning: #D4A04A;
+  --lounge-bg: #E8D5C4;
+  --appetizer-bg: #D4C5B9;
+  --dining-bg: #C9BFB5;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--onyx);
+  background: var(--champagne);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ---- HEADER ---- */
+.header {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem 1.25rem;
+}
+
+.header-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  color: var(--rose-gold-light);
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.01em;
+}
+
+.header .couple-names {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+  opacity: 0.92;
+}
+
+.header .venue-date {
+  font-size: 0.82rem;
+  color: var(--rose-gold);
+  margin-top: 0.2rem;
+  font-weight: 300;
+}
+
+/* ================================================================
+   VENUE SCHEMATIC
+   ================================================================ */
+.venue-section {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.venue-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.venue-subtitle {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--onyx-light);
+  margin-bottom: 1rem;
+}
+
+.venue-map {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(34,45,68,0.08);
+  padding: 1.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  /* Subtle grid background */
+  background-image:
+    linear-gradient(rgba(34,45,68,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,45,68,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Flow arrow */
+.flow-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--rose-gold-light);
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+}
+
+.flow-step .step-num {
+  background: var(--rose-gold-dark);
+  color: var(--white);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.flow-chevron {
+  color: var(--rose-gold);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Zones layout */
+.venue-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 700px) {
+  .venue-zones {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+.venue-zone {
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
+  min-height: 120px;
+}
+
+.venue-zone .zone-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.venue-zone .zone-desc {
+  font-size: 0.78rem;
+  color: var(--onyx-light);
+  margin-bottom: 0.6rem;
+  line-height: 1.45;
+}
+
+/* Zone: Lounge */
+.zone-lounge {
+  background: linear-gradient(135deg, #F7EDE4 0%, #EFE0D3 100%);
+  border: 1.5px solid #E0CFC0;
+  flex: 1;
+}
+
+/* Zone: Appetizer */
+.zone-appetizer {
+  background: linear-gradient(135deg, #EDE7DF 0%, #E3DAD0 100%);
+  border: 1.5px solid #D4C9BC;
+  flex: 0.8;
+}
+
+/* Zone: Main Dining */
+.zone-dining {
+  background: linear-gradient(135deg, #E8E0D7 0%, #DDD4CA 100%);
+  border: 1.5px solid #CCC3B6;
+  flex: 2;
+}
+
+/* Furniture elements */
+.highboys {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.highboy {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--platinum), #D5D0CB);
+  border: 1.5px solid #C0BAB2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  color: var(--onyx-light);
+  position: relative;
+}
+
+.highboy::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(196,143,127,0.25);
+  border: 1px solid rgba(196,143,127,0.4);
+}
+
+/* Welcome sign */
+.welcome-sign {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.7);
+  border: 1.5px dashed var(--rose-gold);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.72rem;
+  color: var(--rose-gold-dark);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Appetizer items */
+.appetizer-display {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.appetizer-station {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(196,143,127,0.3);
+  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.68rem;
+  color: var(--onyx-light);
+}
+
+/* Dining tables in schematic */
+.schematic-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.schematic-table {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.schematic-table-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  width: 52px;
+  flex-shrink: 0;
+}
+
+.schematic-table-body {
+  flex: 1;
+  position: relative;
+}
+
+.schematic-table-surface {
+  height: 24px;
+  background: linear-gradient(135deg, var(--platinum), #D5D0CB);
+  border: 1.5px solid #C0BAB2;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* Cheesecloth runner on table */
+.schematic-table-surface::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 6px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(244,221,213,0.7) 0px,
+    rgba(244,221,213,0.7) 3px,
+    transparent 3px,
+    transparent 5px
+  );
+  border-radius: 3px;
+}
+
+/* Bud vases */
+.bud-vases {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+
+.bud-vase {
+  font-size: 0.55rem;
+  line-height: 1;
+}
+
+.schematic-seats-row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 4px;
+}
+
+.schematic-seat {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--platinum);
+  border: 1.5px solid #C0BAB2;
+  flex-shrink: 0;
+}
+
+.schematic-seat.couple-seat {
+  background: var(--rose-gold);
+  border-color: var(--rose-gold-dark);
+  box-shadow: 0 0 0 2px rgba(196,143,127,0.3);
+}
+
+/* Couple label */
+.couple-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--rose-gold-light);
+  border: 1.5px solid var(--rose-gold);
+  border-radius: 99px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--rose-gold-dark);
+  margin-top: 0.3rem;
+}
+
+/* Zone connector arrows */
+.zone-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--rose-gold);
+  transform: rotate(90deg);
+}
+
+@media (min-width: 700px) {
+  .zone-connector {
+    transform: rotate(0deg);
+    min-width: 24px;
+  }
+}
+
+/* Cake icon */
+.cake-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(196,143,127,0.3);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.68rem;
+  color: var(--onyx-light);
+  margin-top: 0.5rem;
+}
+
+/* Music note */
+.music-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: var(--onyx-light);
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* Legend */
+.venue-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--platinum);
+  justify-content: center;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: var(--onyx-light);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #C0BAB2;
+  flex-shrink: 0;
+}
+
+.legend-dot.seat { background: var(--platinum); }
+.legend-dot.couple { background: var(--rose-gold); border-color: var(--rose-gold-dark); }
+.legend-dot.highboy-leg { background: linear-gradient(135deg, var(--platinum), #D5D0CB); }
+
+/* ================================================================
+   NOTES BANNER
+   ================================================================ */
+.notes-banner {
+  background: var(--rose-gold-lighter);
+  border-left: 4px solid var(--rose-gold);
+  padding: 0.85rem 1rem;
+  margin: 1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  color: var(--onyx);
+  line-height: 1.5;
+}
+
+.notes-banner strong {
+  color: var(--rose-gold-dark);
+}
+
+/* ---- INSTRUCTIONS ---- */
+.instructions {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  color: var(--onyx-light);
+}
+
+.instructions .desktop-hint {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .instructions .mobile-hint { display: none; }
+  .instructions .desktop-hint { display: inline; }
+}
+
+/* ---- PROGRESS BAR ---- */
+.progress-section {
+  padding: 0.5rem 1rem 0.25rem;
+  text-align: center;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.progress-bar-track {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 8px;
+  background: var(--platinum);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rose-gold), var(--rose-gold-dark));
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* ---- UNASSIGNED GUEST PANEL ---- */
+.guest-panel {
+  margin: 0.75rem 1rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(34, 45, 68, 0.06);
+  overflow: hidden;
+}
+
+.guest-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--rose-gold-light);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.guest-panel-header h3 {
+  font-size: 1rem;
+  color: var(--rose-gold-dark);
+}
+
+.guest-panel-header .toggle-icon {
+  font-size: 1.2rem;
+  color: var(--rose-gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.guest-panel-header.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.guest-panel-body {
+  padding: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-height: 50vh;
+  overflow-y: auto;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.guest-panel-body.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.guest-panel-body .empty-msg {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--onyx-light);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+/* ---- GUEST CHIPS ---- */
+.guest-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, opacity 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.guest-chip.unassigned {
+  background: var(--rose-gold-light);
+  color: var(--rose-gold-dark);
+  border: 1.5px solid var(--rose-gold);
+}
+
+.guest-chip.assigned {
+  background: var(--navy);
+  color: var(--white);
+  border: 1.5px solid var(--navy);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.guest-chip.couple-chip {
+  background: var(--rose-gold-dark);
+  border-color: var(--rose-gold-dark);
+}
+
+.guest-chip.vegan-chip::after {
+  content: '🌱';
+  margin-left: 0.3rem;
+  font-size: 0.7rem;
+}
+
+.guest-chip.selected {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px var(--rose-gold), 0 4px 14px rgba(196, 143, 127, 0.35);
+}
+
+.guest-chip.assigned.selected {
+  box-shadow: 0 0 0 3px var(--rose-gold), 0 4px 14px rgba(34, 45, 68, 0.3);
+}
+
+.guest-chip:active {
+  transform: scale(0.96);
+}
+
+.guest-chip.dragging {
+  opacity: 0.5;
+}
+
+.guest-chip .remove-x {
+  margin-left: 0.4rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+@keyframes chipAppear {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.guest-chip.just-placed {
+  animation: chipAppear 0.3s ease forwards;
+}
+
+/* ---- TABLES SECTION ---- */
+.tables-section {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.tables-section h2 {
+  text-align: center;
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.tables-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .tables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* ---- TABLE CARD ---- */
+.table-card {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(34, 45, 68, 0.06);
+  padding: 1rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.table-card.drop-target {
+  border-color: var(--rose-gold);
+  box-shadow: 0 0 0 3px rgba(196, 143, 127, 0.25), 0 4px 20px rgba(196, 143, 127, 0.15);
+}
+
+.table-card.tap-target {
+  border-color: var(--rose-gold);
+  box-shadow: 0 0 0 3px rgba(196, 143, 127, 0.25);
+}
+
+.table-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.table-card-header h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.seat-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--onyx-light);
+  background: var(--platinum);
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+}
+
+.seat-count.full {
+  background: var(--success);
+  color: var(--white);
+}
+
+.seat-count.over {
+  background: #C0392B;
+  color: var(--white);
+}
+
+/* ---- TABLE VISUAL ---- */
+.table-visual {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.table-shape-long {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.table-shape-long .table-surface {
+  background: linear-gradient(135deg, var(--platinum), #DDD9D4);
+  border-radius: 8px;
+  height: 32px;
+  margin: 14px 8px;
+  border: 1.5px solid #CCC8C2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cheesecloth runner on interactive tables */
+.table-shape-long .table-surface::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  right: 6%;
+  height: 8px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(244,221,213,0.6) 0px,
+    rgba(244,221,213,0.6) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  border-radius: 4px;
+}
+
+/* Bud vase indicators */
+.table-shape-long .table-surface::after {
+  content: '🌸   🌸   🌸';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+
+.table-shape-long .seats-row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 12px;
+}
+
+.table-shape-long .seats-row.top {
+  margin-bottom: -4px;
+}
+
+.table-shape-long .seats-row.bottom {
+  margin-top: -4px;
+}
+
+.seat-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--platinum);
+  border: 1.5px solid #CCC8C2;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.seat-dot.filled {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.seat-dot.couple-dot {
+  background: var(--rose-gold);
+  border-color: var(--rose-gold-dark);
+}
+
+/* ---- GUESTS IN TABLE ---- */
+.table-guests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  min-height: 28px;
+}
+
+.table-guests-empty {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--onyx-light);
+  font-style: italic;
+  padding: 0.25rem 0;
+}
+
+/* ---- DETAILS SECTION ---- */
+.details-section {
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  padding: 0 1rem;
+}
+
+.details-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(34,45,68,0.06);
+  padding: 1rem 1.25rem;
+}
+
+.details-card h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  font-size: 0.82rem;
+  color: var(--onyx);
+  border-bottom: 1px solid var(--platinum);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-icon {
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.detail-text {
+  line-height: 1.45;
+}
+
+.detail-text strong {
+  color: var(--navy);
+}
+
+/* ---- SEND BUTTON ---- */
+.send-section {
+  padding: 1.25rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.unassigned-warning {
+  background: #FFF3CD;
+  color: #856404;
+  border: 1px solid #FFEEBA;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: none;
+}
+
+.unassigned-warning.visible {
+  display: block;
+}
+
+.btn-send {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 99px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-send:hover {
+  background: #1A2336;
+}
+
+.btn-send:active {
+  transform: scale(0.97);
+}
+
+.btn-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- TOAST ---- */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 99px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 6px 24px rgba(34, 45, 68, 0.25);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 1000;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: var(--onyx-light);
+}
+
+.footer a {
+  color: var(--rose-gold-dark);
+  text-decoration: none;
+}
+
+/* ---- SCROLLBAR ---- */
+.guest-panel-body::-webkit-scrollbar {
+  width: 4px;
+}
+.guest-panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.guest-panel-body::-webkit-scrollbar-thumb {
+  background: var(--rose-gold);
+  border-radius: 99px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 769px) {
+  .header h1 { font-size: 2.1rem; }
+  .header-logo { width: 72px; }
+  .notes-banner { margin: 1rem auto; max-width: 700px; }
+  .guest-panel { margin: 0.75rem auto; max-width: 700px; }
+  .tables-section { max-width: 960px; margin: 0 auto; }
+  .send-section { max-width: 700px; margin: 0 auto; }
+}
+
+/* Divider */
+.section-divider {
+  max-width: 200px;
+  margin: 1.5rem auto;
+  border: none;
+  border-top: 1px solid var(--platinum);
+}
+
+/* Vegan tag in details */
+.vegan-tag {
+  display: inline-block;
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 99px;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* GUEST LIST BUILDER */
+.guest-builder {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.guest-builder h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+.builder-subtitle {
+  font-size: 0.9rem;
+  color: var(--onyx-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.builder-input-row {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 420px;
+  margin: 0 auto 1rem;
+}
+.builder-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--platinum);
+  border-radius: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.builder-input:focus { border-color: var(--rose-gold); }
+.btn-add {
+  padding: 0.7rem 1.25rem;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-add:hover { background: var(--rose-gold-dark); }
+.btn-bulk { margin-top: 0.5rem; }
+.builder-bulk-hint {
+  max-width: 420px;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+.builder-bulk-hint summary {
+  font-size: 0.82rem;
+  color: var(--rose-gold-dark);
+  cursor: pointer;
+  font-weight: 600;
+}
+.builder-bulk-hint p {
+  font-size: 0.82rem;
+  color: var(--onyx-light);
+  margin: 0.5rem 0;
+}
+.builder-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--platinum);
+  border-radius: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+}
+.builder-textarea:focus { border-color: var(--rose-gold); }
+.builder-guests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+.builder-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--white);
+  border: 1.5px solid var(--platinum);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.builder-chip:hover {
+  border-color: #e57373;
+  background: #FFF5F5;
+}
+.builder-chip .chip-x {
+  font-size: 0.75rem;
+  color: #bbb;
+  font-weight: 700;
+  line-height: 1;
+}
+.builder-chip:hover .chip-x { color: #e57373; }
+.builder-count {
+  font-size: 0.82rem;
+  color: var(--onyx-light);
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<script>
+// ============================================================
+//  CONFIGURATION
+// ============================================================
+const CONFIG = {
+  coupleNames: "Angelica & Forrest",
+  weddingDate: "April 16, 2026",
+  venueName: "The Vault Garden \u2014 Alcove",
+
+  tables: [
+    { name: "Table 1", seats: 12, shape: "long" },
+    { name: "Table 2", seats: 12, shape: "long" },
+    { name: "Table 3", seats: 11, shape: "long" },
+  ],
+
+  guests: [],
+
+  coupleMembers: ["Angelica", "Forrest"],
+
+  veganGuests: ["Roseia", "Lily"],
+
+  preAssigned: {},
+
+  notes: "You'll be seated right with your guests \u2014 no separate sweetheart table. Your reception flows from appetizers and mingling in the lounge to a beautiful seated dinner in the Alcove with 3 long tables. Bud vases and table arrangements will line the tables with cheesecloth runners. Name cards (SF Skyline design) will be at each seat so everyone knows exactly where to sit!"
+};
+// ============================================================
+//  END CONFIGURATION
+// ============================================================
+</script>
+
+<div id="app"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ---- STATE ----
+  const assignments = {};
+  let selectedGuest = null;
+
+  // Apply pre-assignments
+  Object.keys(CONFIG.preAssigned).forEach(tableIdx => {
+    CONFIG.preAssigned[tableIdx].forEach(guest => {
+      assignments[guest] = parseInt(tableIdx);
+    });
+  });
+
+  // ---- BUILD THE PAGE ----
+  function buildApp() {
+    const app = document.getElementById('app');
+
+    app.innerHTML = `
+      <div class="header">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031638979/dJhlUfNtArbuYewS.png"
+             alt="Our Little Wedding" class="header-logo" />
+        <h1>Let's Set the Table!</h1>
+        <div class="couple-names">${esc(CONFIG.coupleNames)}</div>
+        <div class="venue-date">${esc(CONFIG.venueName)} &middot; ${esc(CONFIG.weddingDate)}</div>
+      </div>
+
+      <!-- ====== VENUE SCHEMATIC ====== -->
+      <div class="venue-section">
+        <h2>Your Venue Layout</h2>
+        <p class="venue-subtitle">The Vault Garden \u2014 Alcove Space</p>
+
+        <div class="venue-map">
+          <!-- Flow indicator -->
+          <div class="flow-arrow-container">
+            <div class="flow-step"><span class="step-num">1</span> Lounge</div>
+            <span class="flow-chevron">\u203A</span>
+            <div class="flow-step"><span class="step-num">2</span> Appetizers</div>
+            <span class="flow-chevron">\u203A</span>
+            <div class="flow-step"><span class="step-num">3</span> Dinner (Alcove)</div>
+          </div>
+
+          <div class="venue-zones">
+            <!-- LOUNGE ZONE -->
+            <div class="venue-zone zone-lounge">
+              <div class="zone-label">\u2615 Lounge Area</div>
+              <div class="zone-desc">Guests arrive here first. Mingle, sip, enjoy!</div>
+              <div class="highboys">
+                <div class="highboy" title="Highboy"></div>
+                <div class="highboy" title="Highboy"></div>
+                <div class="highboy" title="Highboy"></div>
+                <div class="highboy" title="Highboy"></div>
+              </div>
+              <div class="welcome-sign">\u269B Welcome Sign + Easel</div>
+              <!-- Violin & Cello Duo is at ceremony (City Hall), not reception -->
+            </div>
+
+            <div class="zone-connector">\u203A</div>
+
+            <!-- APPETIZER ZONE -->
+            <div class="venue-zone zone-appetizer">
+              <div class="zone-label">\uD83E\uDD57 Appetizer Room</div>
+              <div class="zone-desc">Stationary appetizers as guests transition to dinner.</div>
+              <div class="appetizer-display">
+                <div class="appetizer-station">\uD83C\uDF3F Stationary Apps</div>
+                <div class="appetizer-station">\uD83C\uDF77 Drinks</div>
+              </div>
+            </div>
+
+            <div class="zone-connector">\u203A</div>
+
+            <!-- MAIN DINING ZONE -->
+            <div class="venue-zone zone-dining">
+              <div class="zone-label">\uD83C\uDF7D Main Dining \u2014 The Alcove</div>
+              <div class="zone-desc">3 long tables. Cheesecloth runners with bud vases & table arrangements.</div>
+
+              <div class="schematic-tables">
+                <!-- Table 1 -->
+                <div class="schematic-table">
+                  <div class="schematic-table-label">Table 1</div>
+                  <div class="schematic-table-body">
+                    <div class="schematic-seats-row">
+                      ${Array(6).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                    <div class="schematic-table-surface">
+                      <div class="bud-vases">
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                        <span class="bud-vase">\uD83C\uDF3C</span>
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                      </div>
+                    </div>
+                    <div class="schematic-seats-row">
+                      ${Array(6).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Table 2 -->
+                <div class="schematic-table">
+                  <div class="schematic-table-label">Table 2</div>
+                  <div class="schematic-table-body">
+                    <div class="schematic-seats-row">
+                      ${Array(6).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                    <div class="schematic-table-surface">
+                      <div class="bud-vases">
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                        <span class="bud-vase">\uD83C\uDF3C</span>
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                      </div>
+                    </div>
+                    <div class="schematic-seats-row">
+                      ${Array(6).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Table 3 -->
+                <div class="schematic-table">
+                  <div class="schematic-table-label">Table 3</div>
+                  <div class="schematic-table-body">
+                    <div class="schematic-seats-row">
+                      ${Array(6).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                    <div class="schematic-table-surface">
+                      <div class="bud-vases">
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                        <span class="bud-vase">\uD83C\uDF3C</span>
+                        <span class="bud-vase">\uD83C\uDF38</span>
+                      </div>
+                    </div>
+                    <div class="schematic-seats-row">
+                      ${Array(5).fill(0).map(() => '<div class="schematic-seat"></div>').join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cake-display">\uD83C\uDF82 Cake Display</div>
+            </div>
+          </div>
+
+          <!-- Legend -->
+          <div class="venue-legend">
+            <div class="legend-item"><div class="legend-dot seat"></div> Seat</div>
+            <div class="legend-item"><div class="legend-dot highboy-leg"></div> Highboy table</div>
+            <div class="legend-item">\uD83C\uDF38 Bud vase / Flowers</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- ====== DETAILS CARD ====== -->
+      <div class="details-section">
+        <div class="details-card">
+          <h3>Reception Details at a Glance</h3>
+          <div class="detail-row">
+            <span class="detail-icon">\uD83C\uDF7D</span>
+            <span class="detail-text"><strong>Dinner:</strong> 3 long tables, seated with your people!</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">\uD83C\uDF3F</span>
+            <span class="detail-text"><strong>Decor:</strong> Cheesecloth runners, bud vases & table arrangements, all white mixed florals</span>
+          </div>
+          <!-- Music (Ilana Thomas) is ceremony only (City Hall) -->
+          <div class="detail-row">
+            <span class="detail-icon">\uD83C\uDF82</span>
+            <span class="detail-text"><strong>Cake:</strong> White, Strawberry Compote filling, Pearls design</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">\uD83C\uDF31</span>
+            <span class="detail-text"><strong>Vegan guests:</strong> Roseia, Lily <span class="vegan-tag">VEGAN</span></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">\uD83D\uDCCD</span>
+            <span class="detail-text"><strong>Name cards:</strong> First names only, SF Skyline design (OLW providing)</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- ====== SEATING TOOL ====== -->
+      ${CONFIG.notes ? `
+      <div class="notes-banner">
+        <strong>A note for you:</strong> ${esc(CONFIG.notes)}
+      </div>` : ''}
+
+      <!-- GUEST LIST BUILDER -->
+      <div class="guest-builder" id="guest-builder">
+        <h2>Step 1: Add Your Guests</h2>
+        <p class="builder-subtitle">Type each guest's first name and tap Add. Once your list is ready, scroll down to assign seats!</p>
+        <div class="builder-input-row">
+          <input type="text" id="guest-name-input" class="builder-input" placeholder="Guest's first name..." autocomplete="off" />
+          <button class="btn-add" id="btn-add-guest">Add</button>
+        </div>
+        <div class="builder-bulk-hint">
+          <details>
+            <summary>Adding multiple guests at once?</summary>
+            <p>Paste a list of names separated by commas or new lines:</p>
+            <textarea id="bulk-input" class="builder-textarea" rows="4" placeholder="e.g. Mom, Dad, Auntie Rose, Uncle James..."></textarea>
+            <button class="btn-add btn-bulk" id="btn-bulk-add">Add All</button>
+          </details>
+        </div>
+        <div class="builder-guests" id="builder-guest-list"></div>
+        <div class="builder-count" id="builder-count"></div>
+      </div>
+
+      <hr class="section-divider">
+
+      <div class="instructions">
+        <span class="mobile-hint">Step 2: Tap a guest, then tap a table to seat them. Tap a seated guest to move them back. Easy!</span>
+        <span class="desktop-hint">Step 2: Drag a guest to a table, or click a guest then click a table. Click a seated guest to unassign them.</span>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-text" id="progress-text">0 of ${CONFIG.guests.length} guests seated</div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="guest-panel" id="guest-panel">
+        <div class="guest-panel-header" id="panel-toggle">
+          <h3>Unassigned Guests (<span id="unassigned-count">${CONFIG.guests.length}</span>)</h3>
+          <span class="toggle-icon">&#9660;</span>
+        </div>
+        <div class="guest-panel-body" id="unassigned-list"></div>
+      </div>
+
+      <div class="tables-section">
+        <h2>Your Tables</h2>
+        <div class="tables-grid" id="tables-grid"></div>
+      </div>
+
+      <div class="send-section">
+        <div class="unassigned-warning" id="unassigned-warning">
+          Some guests haven't been seated yet. You can still send, but Jaime will need to know where they should sit!
+        </div>
+        <button class="btn-send" id="btn-send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Send to Jaime
+        </button>
+      </div>
+
+      <div class="footer">
+        Made with love by <a href="#">Our Little Wedding</a>
+      </div>
+    `;
+
+    renderUnassigned();
+    renderTables();
+    updateProgress();
+    bindPanelToggle();
+    bindSendButton();
+  }
+
+  // ---- RENDER UNASSIGNED LIST ----
+  function renderUnassigned() {
+    const list = document.getElementById('unassigned-list');
+    const unassigned = CONFIG.guests.filter(g => assignments[g] === undefined);
+
+    document.getElementById('unassigned-count').textContent = unassigned.length;
+
+    if (unassigned.length === 0) {
+      list.innerHTML = '<div class="empty-msg">Everyone is seated! Amazing work \u2014 your table is set!</div>';
+      return;
+    }
+
+    list.innerHTML = '';
+    unassigned.forEach(name => {
+      const chip = document.createElement('div');
+      let classes = 'guest-chip unassigned';
+      if (selectedGuest === name) classes += ' selected';
+      if (CONFIG.coupleMembers.includes(name)) classes += ' couple-chip-unassigned';
+      if (CONFIG.veganGuests.includes(name)) classes += ' vegan-chip';
+      chip.className = classes;
+      chip.textContent = name;
+      chip.setAttribute('data-guest', name);
+      chip.draggable = true;
+
+      chip.addEventListener('click', () => handleGuestClick(name));
+      chip.addEventListener('dragstart', (e) => handleDragStart(e, name));
+      chip.addEventListener('dragend', handleDragEnd);
+
+      list.appendChild(chip);
+    });
+  }
+
+  // ---- RENDER TABLES ----
+  function renderTables() {
+    const grid = document.getElementById('tables-grid');
+    grid.innerHTML = '';
+
+    CONFIG.tables.forEach((table, idx) => {
+      const seated = getGuestsAtTable(idx);
+      const count = seated.length;
+      const isFull = count >= table.seats;
+      const isOver = count > table.seats;
+
+      const card = document.createElement('div');
+      card.className = 'table-card';
+      card.setAttribute('data-table', idx);
+
+      let countClass = '';
+      if (isOver) countClass = ' over';
+      else if (isFull) countClass = ' full';
+
+      card.innerHTML = `
+        <div class="table-card-header">
+          <h3>${esc(table.name)}</h3>
+          <span class="seat-count${countClass}">${count} / ${table.seats}</span>
+        </div>
+        <div class="table-visual">${buildLongTable(table.seats, seated)}</div>
+        <div class="table-guests" data-table-guests="${idx}"></div>
+      `;
+
+      // Drop events
+      card.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        card.classList.add('drop-target');
+      });
+      card.addEventListener('dragleave', () => {
+        card.classList.remove('drop-target');
+      });
+      card.addEventListener('drop', (e) => {
+        e.preventDefault();
+        card.classList.remove('drop-target');
+        const gName = e.dataTransfer.getData('text/plain');
+        if (gName) {
+          assignGuest(gName, idx);
+          renderAll();
+        }
+      });
+
+      // Tap-to-assign
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.guest-chip')) return;
+        if (selectedGuest !== null) {
+          assignGuest(selectedGuest, idx);
+          selectedGuest = null;
+          renderAll();
+        }
+      });
+
+      grid.appendChild(card);
+
+      // Render seated guest chips
+      const guestContainer = card.querySelector(`[data-table-guests="${idx}"]`);
+      if (seated.length === 0) {
+        guestContainer.innerHTML = '<div class="table-guests-empty">Tap a guest to seat them here</div>';
+      } else {
+        seated.forEach(name => {
+          const chip = document.createElement('div');
+          let classes = 'guest-chip assigned';
+          if (CONFIG.coupleMembers.includes(name)) classes += ' couple-chip';
+          if (CONFIG.veganGuests.includes(name)) classes += ' vegan-chip';
+          chip.className = classes;
+          chip.setAttribute('data-guest', name);
+          chip.innerHTML = `${esc(name)}<span class="remove-x">&times;</span>`;
+          chip.draggable = true;
+
+          chip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            handleSeatedGuestClick(name);
+          });
+          chip.addEventListener('dragstart', (e) => handleDragStart(e, name));
+          chip.addEventListener('dragend', handleDragEnd);
+
+          guestContainer.appendChild(chip);
+        });
+      }
+    });
+  }
+
+  // ---- TABLE VISUAL ----
+  function buildLongTable(seats, seatedGuests) {
+    const topCount = Math.ceil(seats / 2);
+    const bottomCount = Math.floor(seats / 2);
+    const filled = seatedGuests.length;
+
+    let topDots = '';
+    for (let i = 0; i < topCount; i++) {
+      const guestAtSeat = seatedGuests[i];
+      const isCouple = guestAtSeat && CONFIG.coupleMembers.includes(guestAtSeat);
+      const isFilled = i < filled;
+      let cls = 'seat-dot';
+      if (isFilled && isCouple) cls += ' couple-dot';
+      else if (isFilled) cls += ' filled';
+      topDots += `<div class="${cls}"></div>`;
+    }
+
+    let bottomDots = '';
+    for (let i = 0; i < bottomCount; i++) {
+      const seatIdx = topCount + i;
+      const guestAtSeat = seatedGuests[seatIdx];
+      const isCouple = guestAtSeat && CONFIG.coupleMembers.includes(guestAtSeat);
+      const isFilled = seatIdx < filled;
+      let cls = 'seat-dot';
+      if (isFilled && isCouple) cls += ' couple-dot';
+      else if (isFilled) cls += ' filled';
+      bottomDots += `<div class="${cls}"></div>`;
+    }
+
+    return `
+      <div class="table-shape-long">
+        <div class="seats-row top">${topDots}</div>
+        <div class="table-surface"></div>
+        <div class="seats-row bottom">${bottomDots}</div>
+      </div>
+    `;
+  }
+
+  // ---- INTERACTIONS ----
+  function handleGuestClick(name) {
+    if (selectedGuest === name) {
+      selectedGuest = null;
+    } else {
+      selectedGuest = name;
+    }
+    renderAll();
+  }
+
+  function handleSeatedGuestClick(name) {
+    if (selectedGuest === name) {
+      delete assignments[name];
+      selectedGuest = null;
+      renderAll();
+      return;
+    }
+
+    if (selectedGuest !== null && assignments[selectedGuest] === undefined) {
+      return;
+    }
+
+    selectedGuest = name;
+    renderAll();
+    showToast('Tap again to unassign, or tap another table to move them.');
+  }
+
+  function assignGuest(name, tableIdx) {
+    assignments[name] = tableIdx;
+    selectedGuest = null;
+  }
+
+  function handleDragStart(e, name) {
+    e.dataTransfer.setData('text/plain', name);
+    e.dataTransfer.effectAllowed = 'move';
+    selectedGuest = null;
+
+    setTimeout(() => {
+      const el = document.querySelector(`[data-guest="${CSS.escape(name)}"]`);
+      if (el) el.classList.add('dragging');
+    }, 0);
+  }
+
+  function handleDragEnd() {
+    document.querySelectorAll('.guest-chip.dragging').forEach(el => el.classList.remove('dragging'));
+    document.querySelectorAll('.table-card.drop-target').forEach(el => el.classList.remove('drop-target'));
+    renderAll();
+  }
+
+  // ---- HELPERS ----
+  function getGuestsAtTable(idx) {
+    return CONFIG.guests.filter(g => assignments[g] === idx);
+  }
+
+  function getUnassignedGuests() {
+    return CONFIG.guests.filter(g => assignments[g] === undefined);
+  }
+
+  function updateProgress() {
+    const seated = CONFIG.guests.length - getUnassignedGuests().length;
+    const total = CONFIG.guests.length;
+    const pct = total > 0 ? (seated / total) * 100 : 0;
+
+    document.getElementById('progress-text').textContent = `${seated} of ${total} guests seated`;
+    document.getElementById('progress-fill').style.width = pct + '%';
+
+    const warning = document.getElementById('unassigned-warning');
+    if (seated < total) {
+      warning.classList.add('visible');
+    } else {
+      warning.classList.remove('visible');
+    }
+  }
+
+  function renderAll() {
+    renderUnassigned();
+    renderTables();
+    updateProgress();
+  }
+
+  // ---- PANEL TOGGLE ----
+  function bindPanelToggle() {
+    const toggle = document.getElementById('panel-toggle');
+    const body = document.getElementById('unassigned-list');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('collapsed');
+      body.classList.toggle('collapsed');
+    });
+  }
+
+  // ---- SEND TO JAIME ----
+  function bindSendButton() {
+    document.getElementById('btn-send').addEventListener('click', () => {
+      const lines = [];
+      lines.push('SEATING PLAN');
+      lines.push(`${CONFIG.coupleNames} | ${CONFIG.venueName} | ${CONFIG.weddingDate}`);
+      lines.push('');
+
+      CONFIG.tables.forEach((table, idx) => {
+        const guests = getGuestsAtTable(idx);
+        lines.push(`${table.name} (${guests.length}/${table.seats}):`);
+        if (guests.length === 0) {
+          lines.push('  (no guests assigned)');
+        } else {
+          guests.forEach(g => {
+            let suffix = '';
+            if (CONFIG.veganGuests.includes(g)) suffix = ' [VEGAN]';
+            if (CONFIG.coupleMembers.includes(g)) suffix = ' \u2764';
+            lines.push(`  - ${g}${suffix}`);
+          });
+        }
+        lines.push('');
+      });
+
+      const unassigned = getUnassignedGuests();
+      if (unassigned.length > 0) {
+        lines.push(`UNASSIGNED (${unassigned.length}):`);
+        unassigned.forEach(g => lines.push(`  - ${g}`));
+        lines.push('');
+      }
+
+      lines.push('---');
+      lines.push('Sent from Our Little Wedding Seating Tool');
+
+      const text = lines.join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Copied! Paste this into your message to Jaime.');
+        }).catch(() => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    });
+  }
+
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Copied! Paste this into your message to Jaime.');
+    } catch (e) {
+      showToast('Could not copy automatically. Please select and copy manually.');
+    }
+    document.body.removeChild(ta);
+  }
+
+  // ---- TOAST ----
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  // ---- ESCAPE HTML ----
+  function esc(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // ---- GUEST LIST MANAGEMENT ----
+  const STORAGE_KEY_GUESTS = 'guestlist-angelica-forrest';
+
+  function loadGuestList() {
+    const saved = localStorage.getItem(STORAGE_KEY_GUESTS);
+    if (saved) {
+      try {
+        const list = JSON.parse(saved);
+        if (Array.isArray(list) && list.length > 0) {
+          CONFIG.guests = list;
+        }
+      } catch(e) {}
+    }
+  }
+
+  function saveGuestList() {
+    localStorage.setItem(STORAGE_KEY_GUESTS, JSON.stringify(CONFIG.guests));
+  }
+
+  function addGuest(name) {
+    name = name.trim();
+    if (!name) return false;
+    // Capitalize first letter
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    if (CONFIG.guests.includes(name)) {
+      showToast(name + ' is already on the list!');
+      return false;
+    }
+    CONFIG.guests.push(name);
+    saveGuestList();
+    return true;
+  }
+
+  function removeGuest(name) {
+    CONFIG.guests = CONFIG.guests.filter(g => g !== name);
+    delete assignments[name];
+    saveGuestList();
+  }
+
+  function renderGuestBuilder() {
+    const list = document.getElementById('builder-guest-list');
+    const count = document.getElementById('builder-count');
+    if (!list) return;
+
+    list.innerHTML = '';
+    CONFIG.guests.forEach(name => {
+      const chip = document.createElement('div');
+      chip.className = 'builder-chip';
+      chip.innerHTML = esc(name) + ' <span class="chip-x">&times;</span>';
+      chip.addEventListener('click', () => {
+        removeGuest(name);
+        renderGuestBuilder();
+        renderAll();
+      });
+      list.appendChild(chip);
+    });
+
+    const total = CONFIG.guests.length;
+    const maxSeats = CONFIG.tables.reduce((sum, t) => sum + t.seats, 0);
+    if (total === 0) {
+      count.textContent = 'No guests added yet. Start typing above!';
+    } else {
+      count.textContent = total + ' guest' + (total !== 1 ? 's' : '') + ' added (' + maxSeats + ' seats available)';
+      if (total > maxSeats) {
+        count.textContent += ' \u2014 heads up, that\'s more than your table seats!';
+        count.style.color = '#D4A04A';
+      } else {
+        count.style.color = '';
+      }
+    }
+  }
+
+  function bindGuestBuilder() {
+    const input = document.getElementById('guest-name-input');
+    const addBtn = document.getElementById('btn-add-guest');
+    const bulkInput = document.getElementById('bulk-input');
+    const bulkBtn = document.getElementById('btn-bulk-add');
+
+    if (!input) return;
+
+    function doAdd() {
+      if (addGuest(input.value)) {
+        input.value = '';
+        renderGuestBuilder();
+        renderAll();
+      }
+      input.focus();
+    }
+
+    addBtn.addEventListener('click', doAdd);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') doAdd();
+    });
+
+    bulkBtn.addEventListener('click', () => {
+      const raw = bulkInput.value;
+      const names = raw.split(/[,\n]+/).map(n => n.trim()).filter(n => n.length > 0);
+      let added = 0;
+      names.forEach(n => { if (addGuest(n)) added++; });
+      bulkInput.value = '';
+      if (added > 0) {
+        showToast(added + ' guest' + (added !== 1 ? 's' : '') + ' added!');
+        renderGuestBuilder();
+        renderAll();
+      }
+    });
+  }
+
+  // ---- INIT ----
+  loadGuestList();
+  buildApp();
+  renderGuestBuilder();
+  bindGuestBuilder();
+})();
+</script>
+
+</body>
+</html>

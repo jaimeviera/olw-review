@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelica & Forrest Wedding Questionnaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            color: #3D3D3D;
+            background-color: #F4DDD5;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #222D44;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid #C48F7F;
+        }
+
+        .header-logo {
+            height: 50px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: #F4DDD5;
+            margin-bottom: 5px;
+        }
+
+        .header-countdown {
+            font-size: 16px;
+            color: #C48F7F;
+            font-weight: 600;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background-color: white;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .welcome-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #222D44;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            font-size: 16px;
+            color: #3D3D3D;
+            line-height: 1.8;
+        }
+
+        /* Confirmed Vendors */
+        .vendors-summary {
+            background-color: #F4DDD5;
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: -15px auto 30px;
+            border-radius: 8px;
+        }
+
+        .vendors-summary h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #222D44;
+            margin-bottom: 20px;
+        }
+
+        .vendor-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #E0D1C9;
+            font-size: 15px;
+        }
+
+        .vendor-item:last-child {
+            border-bottom: none;
+        }
+
+        .vendor-check {
+            color: #C48F7F;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: white;
+            max-width: 900px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #222D44;
+            border-bottom: 2px solid #C48F7F;
+        }
+
+        .tab-button {
+            flex: 1;
+            min-width: 100px;
+            padding: 18px 12px;
+            background: none;
+            border: none;
+            color: #8C8C8C;
+            cursor: pointer;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(196, 143, 127, 0.1);
+            color: #C48F7F;
+        }
+
+        .tab-button.active {
+            color: white;
+            border-bottom-color: #C48F7F;
+            background-color: rgba(196, 143, 127, 0.15);
+        }
+
+        .tab-emoji {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #F4DDD5;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #222D44;
+            font-weight: 600;
+        }
+
+        .section-number {
+            background-color: #C48F7F;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .section-helper {
+            background-color: #F4DDD5;
+            border-left: 4px solid #C48F7F;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #3D3D3D;
+        }
+
+        .section-info-bar {
+            background-color: #F4DDD5;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #222D44;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #222D44;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="url"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E0D1C9;
+            border-radius: 4px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            color: #3D3D3D;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="url"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #C48F7F;
+            box-shadow: 0 0 0 3px rgba(196, 143, 127, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: #8C8C8C;
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        .form-warning {
+            background-color: #FFF5E6;
+            border-left: 4px solid #C48F7F;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #222D44;
+            margin-top: 8px;
+        }
+
+        /* Radio & Checkbox Groups */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            margin-top: 4px;
+            cursor: pointer;
+            accent-color: #C48F7F;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            flex: 1;
+            font-weight: 400;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        /* Form Group Subtitle */
+        .form-group-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #222D44;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #F4DDD5;
+        }
+
+        /* Navigation Buttons */
+        .section-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #F4DDD5;
+        }
+
+        .nav-button {
+            background-color: #222D44;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #C48F7F;
+        }
+
+        .nav-button:disabled {
+            background-color: #8C8C8C;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .nav-placeholder {
+            width: 100px;
+        }
+
+        /* Final Section */
+        .final-section {
+            text-align: center;
+        }
+
+        .final-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #222D44;
+            margin-bottom: 20px;
+        }
+
+        .final-section p {
+            font-size: 16px;
+            color: #3D3D3D;
+            margin-bottom: 20px;
+        }
+
+        .submit-button {
+            background-color: #C48F7F;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 4px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 30px 0;
+        }
+
+        .submit-button:hover {
+            background-color: #B07D6F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 143, 127, 0.3);
+        }
+
+        /* Next Steps */
+        .next-steps {
+            background-color: #F4DDD5;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #222D44;
+            margin-bottom: 20px;
+        }
+
+        .next-steps ol {
+            list-style: decimal;
+            margin-left: 20px;
+            font-size: 15px;
+            color: #3D3D3D;
+        }
+
+        .next-steps li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .calendly-cta {
+            background-color: white;
+            border: 2px solid #C48F7F;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .calendly-cta p {
+            font-size: 15px;
+            color: #3D3D3D;
+            margin-bottom: 20px;
+        }
+
+        .calendly-button {
+            background-color: #C48F7F;
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 4px;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .calendly-button:hover {
+            background-color: #B07D6F;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222D44;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            border-top: 4px solid #C48F7F;
+        }
+
+        .footer a {
+            color: #C48F7F;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .tab-button {
+                font-size: 11px;
+                padding: 14px 8px;
+            }
+
+            .tab-emoji {
+                font-size: 18px;
+            }
+
+            .tab-content {
+                padding: 25px;
+            }
+
+            .section-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-button {
+                width: 100%;
+            }
+
+            .nav-placeholder {
+                width: 100%;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header-subtitle {
+                font-size: 14px;
+            }
+
+            .tab-button {
+                min-width: 80px;
+                font-size: 10px;
+            }
+
+            .tab-content {
+                padding: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031638979/dJhlUfNtArbuYewS.png" alt="Our Little Wedding" class="header-logo">
+        <h1>Angelica & Forrest</h1>
+        <div class="header-subtitle">April 16, 2026 · San Francisco</div>
+        <div class="header-countdown">39 days until your wedding!</div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h2>Hi Angelica and Forrest! 💛</h2>
+        <p>We're just over five weeks out and things are coming together beautifully. This questionnaire helps us build your final day-of timeline, give your photographer everything he needs for your photos, and make sure your musician has your final song selections ready. Take your time with it — and if you're not sure about something, just leave it blank and we'll talk through it at our next meeting! 💛</p>
+    </div>
+
+    <!-- Confirmed Vendors -->
+    <div class="vendors-summary">
+        <h3>Your Confirmed Vendors ✓</h3>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Musician</span>
+            <span>Confirmed — solo violin + cellist</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Florist</span>
+            <span>Confirmed</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Baker</span>
+            <span>Confirmed</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Hair</span>
+            <span>Confirmed — 7:00 AM start</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Makeup</span>
+            <span>Confirmed — 8:00 AM start, 3 people</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Ceremony</span>
+            <span>SF City Hall, 11:00 AM, North Floor</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Reception</span>
+            <span>The Vault Garden</span>
+        </div>
+        <div class="vendor-item">
+            <span><span class="vendor-check">✓</span> Photographer</span>
+            <span>Confirmed (OLW in-house)</span>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <form class="form-container" action="https://formspree.io/f/xyzgkqvl" method="POST">
+        <!-- Hidden Fields -->
+        <input type="hidden" name="couple_name" value="Angelica & Forrest">
+        <input type="hidden" name="wedding_date" value="April 16, 2026">
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav">
+            <button type="button" class="tab-button active" onclick="switchTab(event, 0)">
+                <span class="tab-emoji">✨</span>
+                <span>Getting Ready</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 1)">
+                <span class="tab-emoji">📸</span>
+                <span>Family & Photos</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 2)">
+                <span class="tab-emoji">💍</span>
+                <span>Ceremony</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 3)">
+                <span class="tab-emoji">🚐</span>
+                <span>The In-Between</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 4)">
+                <span class="tab-emoji">🥂</span>
+                <span>Reception Flow</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 5)">
+                <span class="tab-emoji">🎂</span>
+                <span>Special Moments</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 6)">
+                <span class="tab-emoji">🎵</span>
+                <span>Music & Playlist</span>
+            </button>
+            <button type="button" class="tab-button" onclick="switchTab(event, 7)">
+                <span class="tab-emoji">📋</span>
+                <span>Quick Logistics</span>
+            </button>
+        </div>
+
+        <!-- SECTION 1: Getting Ready -->
+        <div class="tab-content active">
+            <div class="section-header">
+                <h2>Getting Ready</h2>
+                <span class="section-number">Section 1 of 8</span>
+            </div>
+
+            <div class="section-helper">
+                💡 Your hair stylist arrives at 6:45 AM for a 7:00 AM start. Your makeup artist starts at 8:00 AM. All services done by ~9:15 AM.
+            </div>
+
+            <div class="form-group">
+                <label for="getting_ready_location">Where is everyone getting ready?</label>
+                <input type="text" id="getting_ready_location" name="getting_ready_location" placeholder="e.g., The Fairmont Heritage Place, Ghirardelli Square">
+                <div class="form-note">Address, hotel, or location</div>
+            </div>
+
+            <div class="form-group">
+                <label for="angelica_getting_ready">Who will be with Angelica during getting ready?</label>
+                <textarea id="angelica_getting_ready" name="angelica_getting_ready" placeholder="Names of people and their roles"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="forrest_getting_ready_location">Where is Forrest getting ready?</label>
+                <input type="text" id="forrest_getting_ready_location" name="forrest_getting_ready_location" placeholder="Same location or different?">
+            </div>
+
+            <div class="form-group">
+                <label for="forrest_getting_ready">Who will be with Forrest?</label>
+                <textarea id="forrest_getting_ready" name="forrest_getting_ready" placeholder="Names of people and their roles"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Do you want getting-ready photos?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="ready_yes" name="getting_ready_photos" value="Yes - candid shots while getting ready">
+                        <label for="ready_yes">Yes — candid shots while getting ready</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ready_few" name="getting_ready_photos" value="Just a few - the final look">
+                        <label for="ready_few">Just a few — the final look</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ready_no" name="getting_ready_photos" value="No - start photos at City Hall">
+                        <label for="ready_no">No — start photos at City Hall</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="special_moments">Special getting-ready moments to capture?</label>
+                <textarea id="special_moments" name="special_moments" placeholder="Gift exchange, letters, dress reveal, heirloom, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>First look confirmed?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="first_look_yes" name="first_look" value="Yes - private first look before ceremony">
+                        <label for="first_look_yes">Yes — private first look before ceremony</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="first_look_no" name="first_look" value="No - see each other at ceremony">
+                        <label for="first_look_no">No — see each other at ceremony</label>
+                    </div>
+                </div>
+                <div class="form-note">You've mentioned wanting a first look — just confirming! This is factored into your timeline.</div>
+            </div>
+
+            <div class="section-nav">
+                <div class="nav-placeholder"></div>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Family & Photos -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Family & Photos</h2>
+                <span class="section-number">Section 2 of 8</span>
+            </div>
+
+            <div class="section-helper">
+                💡 This is for your photographer and coordinator's eyes only — it helps us handle family dynamics gracefully.
+            </div>
+
+            <div class="form-group-subtitle">Angelica's Side</div>
+
+            <div class="form-group">
+                <label for="angelica_parents">Angelica's parents — together or separated?</label>
+                <input type="text" id="angelica_parents" name="angelica_parents" placeholder="e.g., together, divorced, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="angelica_stepparents">Step-parents to include in photos?</label>
+                <input type="text" id="angelica_stepparents" name="angelica_stepparents" placeholder="Names and relationships">
+            </div>
+
+            <div class="form-group">
+                <label for="angelica_accessibility">Any accessibility needs on Angelica's side?</label>
+                <input type="text" id="angelica_accessibility" name="angelica_accessibility" placeholder="Mobility, hearing, visual, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="angelica_tensions">Any family tensions we should be aware of?</label>
+                <textarea id="angelica_tensions" name="angelica_tensions" placeholder="People who shouldn't be in the same photo group, etc."></textarea>
+            </div>
+
+            <div class="form-group-subtitle">Forrest's Side</div>
+
+            <div class="form-group">
+                <label for="forrest_parents">Forrest's parents — together or separated?</label>
+                <input type="text" id="forrest_parents" name="forrest_parents" placeholder="e.g., together, divorced, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="forrest_stepparents">Step-parents to include in photos?</label>
+                <input type="text" id="forrest_stepparents" name="forrest_stepparents" placeholder="Names and relationships">
+            </div>
+
+            <div class="form-group">
+                <label for="forrest_accessibility">Any accessibility needs on Forrest's side?</label>
+                <input type="text" id="forrest_accessibility" name="forrest_accessibility" placeholder="Mobility, hearing, visual, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="forrest_tensions">Any family tensions on Forrest's side?</label>
+                <textarea id="forrest_tensions" name="forrest_tensions" placeholder="People who shouldn't be in the same photo group, etc."></textarea>
+            </div>
+
+            <div class="form-group-subtitle">Family Photo Groupings</div>
+
+            <div class="section-helper">
+                Auto-included: Couple only, Couple + wedding party
+            </div>
+
+            <div class="form-group">
+                <label for="family_angelica">Couple + Angelica's immediate family — who?</label>
+                <input type="text" id="family_angelica" name="family_angelica" placeholder="Names">
+            </div>
+
+            <div class="form-group">
+                <label for="family_forrest">Couple + Forrest's immediate family — who?</label>
+                <input type="text" id="family_forrest" name="family_forrest" placeholder="Names">
+            </div>
+
+            <div class="form-group">
+                <label for="family_both">Couple + both families together</label>
+                <input type="text" id="family_both" name="family_both" placeholder="Confirm or specify">
+            </div>
+
+            <div class="form-group">
+                <label for="extended_family">Extended family groupings?</label>
+                <textarea id="extended_family" name="extended_family" placeholder="Describe who should be in photos together"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="other_groupings">Any other groupings?</label>
+                <textarea id="other_groupings" name="other_groupings" placeholder="e.g., grandparents, siblings only, college friends, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="anything_else_photos">Anything else you want captured?</label>
+                <textarea id="anything_else_photos" name="anything_else_photos" placeholder="Other special moments or shots"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Camera comfort level?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="camera_very" name="camera_comfort" value="Very comfortable - pose us!">
+                        <label for="camera_very">Very comfortable — pose us!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="camera_middle" name="camera_comfort" value="In the middle - some direction helps">
+                        <label for="camera_middle">In the middle — some direction helps</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="camera_shy" name="camera_comfort" value="Camera shy - prefer candid">
+                        <label for="camera_shy">Camera shy — prefer candid</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Photo style preference?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="style_candid" name="photo_style" value="Mostly candid/photojournalistic">
+                        <label for="style_candid">Mostly candid/photojournalistic</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="style_mix" name="photo_style" value="Mix of candid and posed">
+                        <label for="style_mix">Mix of candid and posed</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="style_traditional" name="photo_style" value="More traditional/classic">
+                        <label for="style_traditional">More traditional/classic</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="city_hall_spots">Any specific City Hall spots you love?</label>
+                <input type="text" id="city_hall_spots" name="city_hall_spots" placeholder="e.g., Grand staircase, 4th floor balcony, rotunda...">
+            </div>
+
+            <div class="form-group">
+                <label for="offsite_locations">Want offsite photo locations?</label>
+                <textarea id="offsite_locations" name="offsite_locations" placeholder="Cable car, Painted Ladies, waterfront, etc."></textarea>
+                <div class="form-note">Your photographer has some great San Francisco spots in mind!</div>
+            </div>
+
+            <div class="form-group-subtitle">VIP Guests</div>
+
+            <div class="form-group">
+                <label for="vip_1">VIP 1 — name + relationship</label>
+                <input type="text" id="vip_1" name="vip_1" placeholder="e.g., Grandma Rose — traveled from out of state">
+            </div>
+
+            <div class="form-group">
+                <label for="vip_2">VIP 2</label>
+                <input type="text" id="vip_2" name="vip_2" placeholder="Name + relationship">
+            </div>
+
+            <div class="form-group">
+                <label for="anything_else_photographer">Anything else for the photographer?</label>
+                <textarea id="anything_else_photographer" name="anything_else_photographer" placeholder="Things you DON'T want, inside jokes, pets coming, etc."></textarea>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Ceremony -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Ceremony</h2>
+                <span class="section-number">Section 3 of 8</span>
+            </div>
+
+            <div class="section-info-bar">
+                🕚 11:00 AM · SF City Hall, North Floor Gallery
+            </div>
+
+            <div class="form-group-subtitle">Processional</div>
+
+            <div class="section-helper">
+                💡 Common flow: officiant in place → groom walks in → wedding party → bride enters
+            </div>
+
+            <div class="form-group">
+                <label for="processional_1">First to walk</label>
+                <input type="text" id="processional_1" name="processional_1" placeholder="e.g., officiant, groomsmen, bridesmaids...">
+            </div>
+
+            <div class="form-group">
+                <label for="processional_2">Then</label>
+                <input type="text" id="processional_2" name="processional_2" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="processional_3">Then</label>
+                <input type="text" id="processional_3" name="processional_3" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="bride_entrance">Bride enters — how?</label>
+                <input type="text" id="bride_entrance" name="bride_entrance" placeholder="e.g., solo, with dad, both parents, someone else?">
+            </div>
+
+            <div class="form-group-subtitle">Music</div>
+
+            <div class="section-helper">
+                💡 Your song list confirmed! Including: Golden Hour, Birds of a Feather, Best Part (first dance), All of Me, and more.
+            </div>
+
+            <div class="form-group">
+                <label for="processional_song">Processional song — which song for the walk down the aisle?</label>
+                <input type="text" id="processional_song" name="processional_song" placeholder="Song from your confirmed list">
+                <div class="form-warning">
+                    ⚠️ Note: '2 Hands 2 Heaven' (Beyonce) requires a custom arrangement ($60 fee, which you've already approved). Is this your processional song?
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="recessional_song">Recessional song — which song as you walk back married?</label>
+                <input type="text" id="recessional_song" name="recessional_song" placeholder="Song from your confirmed list">
+            </div>
+
+            <div class="form-group">
+                <label for="other_ceremony_music">Any other ceremony music moments?</label>
+                <textarea id="other_ceremony_music" name="other_ceremony_music" placeholder="During readings, ring exchange, while guests are seated, etc."></textarea>
+            </div>
+
+            <div class="form-group-subtitle">Ceremony Style</div>
+
+            <div class="form-group">
+                <label>Ceremony vibe</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="ceremony_short" name="ceremony_vibe" value="Short & sweet 10-15 min">
+                        <label for="ceremony_short">Short & sweet 10-15 min</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ceremony_medium" name="ceremony_vibe" value="Medium with personal touches 15-20 min">
+                        <label for="ceremony_medium">Medium with personal touches 15-20 min</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ceremony_long" name="ceremony_vibe" value="Include readings or cultural elements 20+ min">
+                        <label for="ceremony_long">Include readings or cultural elements 20+ min</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Writing your own vows?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="vows_both" name="vows" value="Yes - both of us">
+                        <label for="vows_both">Yes — both of us</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="vows_one" name="vows" value="Yes - just one of us">
+                        <label for="vows_one">Yes — just one of us</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="vows_no" name="vows" value="No - traditional">
+                        <label for="vows_no">No — traditional</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="vows_help" name="vows" value="Not sure yet">
+                        <label for="vows_help">Not sure yet</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 4: The In-Between -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>The In-Between</h2>
+                <span class="section-number">Section 4 of 8</span>
+            </div>
+
+            <div class="section-helper">
+                💡 There's time between your City Hall ceremony (11:00 AM) and your Vault Garden reception.
+            </div>
+
+            <div class="form-group">
+                <label>What do you want to do after City Hall?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="inbetween_photos" name="inbetween_activity" value="More photos (offsite)">
+                        <label for="inbetween_photos">More photos (offsite)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="inbetween_drive" name="inbetween_activity" value="Drive straight to reception">
+                        <label for="inbetween_drive">Drive straight to reception</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="inbetween_lunch" name="inbetween_activity" value="Lunch or snacks together">
+                        <label for="inbetween_lunch">Lunch or snacks together</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="inbetween_celebrate" name="inbetween_activity" value="Private celebration moment">
+                        <label for="inbetween_celebrate">Private celebration moment</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="inbetween_other" name="inbetween_activity" value="Other idea">
+                        <label for="inbetween_other">Other idea</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inbetween_other_idea">If other, what did you have in mind?</label>
+                <textarea id="inbetween_other_idea" name="inbetween_other_idea" placeholder="Describe your idea"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>What should guests do during this time?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="guests_appetizers" name="guests_plan" value="Arrive early for appetizers">
+                        <label for="guests_appetizers">Arrive early for appetizers</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="guests_arrive_later" name="guests_plan" value="Arrive at normal reception time">
+                        <label for="guests_arrive_later">Arrive at normal reception time</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="guests_activity" name="guests_plan" value="Go to a specified activity/location">
+                        <label for="guests_activity">Go to a specified activity/location</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="guests_plan_details">More details about guest plan?</label>
+                <textarea id="guests_plan_details" name="guests_plan_details" placeholder="Where to go, what time, any instructions?"></textarea>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 5: Reception Flow -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Reception Flow</h2>
+                <span class="section-number">Section 5 of 8</span>
+            </div>
+
+            <div class="section-info-bar">
+                📍 The Vault Garden · Lounge area → appetizer room → main dining room with long tables (10 seats each)
+            </div>
+
+            <div class="section-helper">
+                💡 You'll be seated WITH your guests (no sweetheart table). Appetizers: stationary only.
+            </div>
+
+            <div class="form-group">
+                <label>When guests arrive, what happens first?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="arrival_cocktail" name="reception_arrival" value="Cocktail hour in lounge">
+                        <label for="arrival_cocktail">Cocktail hour in lounge</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="arrival_sitdown" name="reception_arrival" value="Straight to main room to be seated">
+                        <label for="arrival_sitdown">Straight to main room to be seated</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="arrival_no_pref" name="reception_arrival" value="No preference - whatever you recommend!">
+                        <label for="arrival_no_pref">No preference — whatever you recommend!</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group-subtitle">Speeches & Toasts</div>
+
+            <div class="form-group">
+                <label>Speeches & toasts</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_no" name="speeches" value="No speeches">
+                        <label for="speeches_no">No speeches</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_us" name="speeches" value="Just us - quick thank-you toast">
+                        <label for="speeches_us">Just us — quick thank-you toast</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_few" name="speeches" value="A few specific people">
+                        <label for="speeches_few">A few specific people</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_open" name="speeches" value="Open it up - anyone can speak">
+                        <label for="speeches_open">Open it up — anyone can speak</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="speaker_1">Speaker 1 — name + relationship</label>
+                <input type="text" id="speaker_1" name="speaker_1" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="speaker_2">Speaker 2</label>
+                <input type="text" id="speaker_2" name="speaker_2" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="speaker_3">Speaker 3</label>
+                <input type="text" id="speaker_3" name="speaker_3" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label>When should speeches happen?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_before" name="speeches_timing" value="Before the meal">
+                        <label for="speeches_before">Before the meal</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_during" name="speeches_timing" value="During the meal">
+                        <label for="speeches_during">During the meal</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_after" name="speeches_timing" value="After the meal">
+                        <label for="speeches_after">After the meal</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="speeches_no_pref" name="speeches_timing" value="No preference">
+                        <label for="speeches_no_pref">No preference</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="menu_preferences">Any menu preferences or dietary restrictions for Vault Garden?</label>
+                <textarea id="menu_preferences" name="menu_preferences" placeholder="List dietary restrictions and preferences by guest"></textarea>
+                <div class="form-note">Menu selection will be finalized closer to the date.</div>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 6: Special Moments -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Special Moments</h2>
+                <span class="section-number">Section 6 of 8</span>
+            </div>
+
+            <div class="section-helper">
+                💡 Your cake is all set! 🎂
+            </div>
+
+            <div class="form-group">
+                <label>Cake cutting</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="cake_formal" name="cake_cutting" value="Formal moment - we announce, you cut, photo op!">
+                        <label for="cake_formal">Formal moment — we announce, you cut, photo op!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cake_lowkey" name="cake_cutting" value="Low-key - just cut and serve">
+                        <label for="cake_lowkey">Low-key — just cut and serve</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cake_skip" name="cake_cutting" value="Skip the cutting - serve as dessert">
+                        <label for="cake_skip">Skip the cutting — serve as dessert</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>First dance?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="first_dance_yes" name="first_dance" value="Yes!">
+                        <label for="first_dance_yes">Yes!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="first_dance_no" name="first_dance" value="No - not big dancers">
+                        <label for="first_dance_no">No — not big dancers</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="first_dance_maybe" name="first_dance" value="Maybe - depends on the vibe">
+                        <label for="first_dance_maybe">Maybe — depends on the vibe</label>
+                    </div>
+                </div>
+                <div class="form-note">'Best Part' is confirmed as your first dance song with your musician!</div>
+            </div>
+
+            <div class="form-group">
+                <label>Parent dances?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="dance_father" name="parent_dances" value="Father/daughter dance">
+                        <label for="dance_father">Father/daughter dance</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="dance_mother" name="parent_dances" value="Mother/son dance">
+                        <label for="dance_mother">Mother/son dance</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="dance_both" name="parent_dances" value="Both!">
+                        <label for="dance_both">Both!</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="father_daughter_song">Father/daughter song</label>
+                <input type="text" id="father_daughter_song" name="father_daughter_song" placeholder="Song title and artist">
+            </div>
+
+            <div class="form-group">
+                <label for="mother_son_song">Mother/son song</label>
+                <input type="text" id="mother_son_song" name="mother_son_song" placeholder="Song title and artist">
+            </div>
+
+            <div class="form-group">
+                <label>Bouquet toss?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="bouquet_yes" name="bouquet_toss" value="Yes!">
+                        <label for="bouquet_yes">Yes!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="bouquet_no" name="bouquet_toss" value="No">
+                        <label for="bouquet_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="other_moments">Any other special moments or traditions?</label>
+                <textarea id="other_moments" name="other_moments" placeholder="Any cultural, family, or personal traditions"></textarea>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 7: Music & Playlist -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Music & Playlist</h2>
+                <span class="section-number">Section 7 of 8</span>
+            </div>
+
+            <div class="section-helper">
+                💡 Your musician (violin + cello) will play during your ceremony. For the reception, we'll need your music preferences.
+            </div>
+
+            <div class="form-group">
+                <label for="playlist_link">Spotify or Apple Music playlist link</label>
+                <input type="url" id="playlist_link" name="playlist_link" placeholder="https://open.spotify.com/playlist/...">
+                <div class="form-note">If you have one ready!</div>
+            </div>
+
+            <div class="form-group">
+                <label>Reception music vibe</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="music_upbeat" name="music_vibe" value="Upbeat & dancing">
+                        <label for="music_upbeat">Upbeat & dancing</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="music_chill" name="music_vibe" value="More chill & conversational">
+                        <label for="music_chill">More chill & conversational</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="music_mix" name="music_vibe" value="Mix - chill during dinner, upbeat after">
+                        <label for="music_mix">Mix — chill during dinner, upbeat after</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="no_play_songs">Do-not-play songs</label>
+                <textarea id="no_play_songs" name="no_play_songs" placeholder="Songs that make you cringe, etc."></textarea>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <button type="button" class="nav-button" onclick="nextTab()">Next →</button>
+            </div>
+        </div>
+
+        <!-- SECTION 8: Quick Logistics -->
+        <div class="tab-content">
+            <div class="section-header">
+                <h2>Quick Logistics</h2>
+                <span class="section-number">Section 8 of 8</span>
+            </div>
+
+            <div class="form-group">
+                <label>Departure timing?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="depart_early" name="departure_timing" value="Leave early (before reception ends)">
+                        <label for="depart_early">Leave early (before reception ends)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="depart_end" name="departure_timing" value="Stay until the end">
+                        <label for="depart_end">Stay until the end</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="depart_unsure" name="departure_timing" value="Not sure yet">
+                        <label for="depart_unsure">Not sure yet</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Departure style</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="departure_grand" name="departure_style" value="Grand exit - guests line up, confetti/bubbles!">
+                        <label for="departure_grand">Grand exit — guests line up, confetti/bubbles!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="departure_casual" name="departure_style" value="Casual - hug everyone, hop in the car">
+                        <label for="departure_casual">Casual — hug everyone, hop in the car</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="departure_just_leave" name="departure_style" value="Just leave - no big deal">
+                        <label for="departure_just_leave">Just leave — no big deal</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="transport_destination">Where is transport taking you?</label>
+                <input type="text" id="transport_destination" name="transport_destination" placeholder="Hotel, airport, residence, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="marriage_license">Marriage license status</label>
+                <textarea id="marriage_license" name="marriage_license" placeholder="Have you applied? Date applied? License number?"></textarea>
+                <div class="form-warning">
+                    ⚠️ As LA County residents, you'll need to apply for your marriage license IN PERSON in California. California marriage licenses are valid for 90 days from the date of issue, so timing matters for your April 16 wedding. If you haven't applied yet, please plan to do so by mid-March!
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emergency_contact">Emergency day-of contact</label>
+                <input type="text" id="emergency_contact" name="emergency_contact" placeholder="Name, phone number — someone NOT in the wedding party">
+            </div>
+
+            <div class="form-group">
+                <label for="dietary_restrictions">Guest dietary restrictions</label>
+                <textarea id="dietary_restrictions" name="dietary_restrictions" placeholder="List by name (e.g., John - vegetarian, Maria - gluten-free)"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="diy_items">DIY items — are you bringing any personal decor, signage, or items that need setup?</label>
+                <textarea id="diy_items" name="diy_items" placeholder="List all items being shipped from Atlanta"></textarea>
+                <div class="form-warning">
+                    ⚠️ We know you're shipping items from Atlanta (table runners, bud vases, linen, cake topper, welcome sign + easel). Please list everything being shipped so we can account for it in the setup plan. Shipping address: 1500 Valley House Drive, Suite 210, Rohnert Park, CA 94928
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="welcome_sign_text">Welcome sign text</label>
+                <input type="text" id="welcome_sign_text" name="welcome_sign_text" placeholder="What should your welcome sign say?">
+            </div>
+
+            <div class="form-group">
+                <label for="anything_else">Anything else Jaime should know?</label>
+                <textarea id="anything_else" name="anything_else" placeholder="Any final thoughts, concerns, or details..."></textarea>
+            </div>
+
+            <div class="section-nav">
+                <button type="button" class="nav-button" onclick="prevTab()">← Previous</button>
+                <div class="nav-placeholder"></div>
+            </div>
+        </div>
+
+        <!-- Final Section - Submit -->
+        <div class="tab-content">
+            <div class="final-section">
+                <h2>You're All Set!</h2>
+                <p>Thank you for taking the time to fill out this questionnaire, Angelica and Forrest. Your answers are so important to making your day perfect.</p>
+
+                <button type="submit" class="submit-button">Submit Questionnaire</button>
+
+                <div class="next-steps">
+                    <h3>What's Coming Up Next</h3>
+                    <ol>
+                        <li><strong>📋 Mar 13:</strong> Return this questionnaire</li>
+                        <li><strong>📅 Mar 20-25:</strong> Meeting with Jaime to finalize timeline</li>
+                        <li><strong>📸 ~Apr 2:</strong> Photographer call</li>
+                        <li><strong>🏛️ ASAP:</strong> Apply for marriage license if not done (valid 90 days!)</li>
+                        <li><strong>📦 Ship to:</strong> 1500 Valley House Dr, Ste 210, Rohnert Park, CA 94928</li>
+                        <li><strong>🎉 Apr 16:</strong> YOUR WEDDING DAY!</li>
+                    </ol>
+                </div>
+
+                <div class="calendly-cta">
+                    <p>Ready to go through this together? Book your timeline meeting with Jaime!</p>
+                    <a href="https://calendly.com/ourlittlewedding/wedding-updates-meeting-clone-2" class="calendly-button">Schedule Your Meeting →</a>
+                    <p style="margin-top: 15px; font-size: 14px;">Suggested dates: March 20-25</p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>With love, The Our Little Wedding Team</p>
+        <p><a href="https://www.ourlittlewedding.com">www.ourlittlewedding.com</a></p>
+    </div>
+
+    <script>
+        let currentTab = 0;
+        const totalTabs = 8;
+
+        function switchTab(e, tabIndex) {
+            e.preventDefault();
+            currentTab = tabIndex;
+            showTab();
+        }
+
+        function nextTab() {
+            if (currentTab < totalTabs - 1) {
+                currentTab++;
+                showTab();
+            } else {
+                currentTab = totalTabs;
+                showTab();
+            }
+        }
+
+        function prevTab() {
+            if (currentTab > 0) {
+                currentTab--;
+                showTab();
+            }
+        }
+
+        function showTab() {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach((tab, index) => {
+                tab.classList.remove('active');
+            });
+
+            buttons.forEach((btn, index) => {
+                btn.classList.remove('active');
+                if (index === currentTab) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if (currentTab < totalTabs) {
+                tabs[currentTab].classList.add('active');
+            } else {
+                tabs[totalTabs].classList.add('active');
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        showTab();
+    </script>
+</body>
+</html>

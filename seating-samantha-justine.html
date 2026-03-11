@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Seating — Samantha &amp; Justine | The Vault Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #222D44;
+  --rose: #C48F7F;
+  --rose-light: #F4DDD5;
+  --rose-lighter: #E8C4BA;
+  --rose-dark: #9B6B5C;
+  --champagne: #FAF8F5;
+  --platinum: #EAE9E5;
+  --onyx: #3D3D3D;
+  --white: #FFFFFF;
+  --success: #6B9E7A;
+  --warning: #D4A054;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--onyx);
+  background: var(--champagne);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 28px 20px 24px;
+  position: relative;
+}
+.header-logo {
+  height: 40px;
+  margin-bottom: 14px;
+  opacity: 0.95;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.92rem;
+  opacity: 0.75;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.header .date-venue {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+/* ── INTRO ── */
+.intro {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 32px 24px 8px;
+  text-align: center;
+}
+.intro h2 {
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.intro p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── VENUE SCHEMATIC ── */
+.schematic-section {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.schematic-title {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.schematic-wrapper {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 2px 20px rgba(34,45,68,0.07);
+  padding: 24px 16px;
+  overflow-x: auto;
+}
+.venue-map {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  background:
+    linear-gradient(rgba(34,45,68,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,45,68,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 2px solid var(--platinum);
+  border-radius: 12px;
+  min-height: 520px;
+}
+
+/* Compass */
+.compass {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--platinum);
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--navy);
+  font-weight: 700;
+  z-index: 5;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.compass::before { content: "N"; position: absolute; top: 4px; font-size: 0.65rem; }
+.compass::after { content: ""; position: absolute; top: 14px; width: 2px; height: 10px; background: var(--rose); border-radius: 1px; }
+.compass .s { position: absolute; bottom: 4px; font-size: 0.55rem; opacity: 0.5; }
+.compass .e { position: absolute; right: 5px; font-size: 0.55rem; opacity: 0.5; }
+.compass .w { position: absolute; left: 5px; font-size: 0.55rem; opacity: 0.5; }
+
+/* Flow arrow */
+.flow-arrow {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 0.65rem;
+  color: var(--rose-dark);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 5;
+  background: rgba(255,255,255,0.9);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--rose-light);
+}
+
+/* Zone base */
+.zone {
+  position: absolute;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.zone-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.zone-detail {
+  font-size: 0.65rem;
+  color: #888;
+  line-height: 1.3;
+}
+.zone-emoji {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+/* Entrance */
+.zone-entrance {
+  left: 2%; top: 3%;
+  width: 22%; height: 18%;
+  background: rgba(244,221,213,0.35);
+  border: 1.5px dashed var(--rose-lighter);
+}
+/* Lounge */
+.zone-lounge {
+  left: 26%; top: 3%;
+  width: 30%; height: 42%;
+  background: rgba(196,143,127,0.1);
+  border: 1.5px solid var(--rose-light);
+}
+/* Bar */
+.zone-bar {
+  left: 26%; top: 47%;
+  width: 30%; height: 10%;
+  background: rgba(34,45,68,0.06);
+  border: 1.5px solid rgba(34,45,68,0.15);
+}
+/* Long Garden */
+.zone-garden {
+  left: 2%; top: 59%;
+  width: 72%; height: 38%;
+  background: rgba(107,158,122,0.08);
+  border: 1.5px solid rgba(107,158,122,0.25);
+}
+/* Alcove */
+.zone-alcove {
+  right: 2%; top: 3%;
+  width: 20%; height: 42%;
+  background: rgba(212,160,84,0.1);
+  border: 1.5px dashed rgba(212,160,84,0.35);
+}
+
+/* Items inside zones */
+.item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.55rem;
+  color: var(--onyx);
+  text-align: center;
+}
+.item-emoji { font-size: 1rem; line-height: 1; }
+.item-label { margin-top: 1px; font-weight: 600; white-space: nowrap; }
+
+/* Tables in garden */
+.garden-table {
+  position: absolute;
+  background: rgba(34,45,68,0.08);
+  border: 1.5px solid rgba(34,45,68,0.2);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.garden-table.sweetheart {
+  background: rgba(196,143,127,0.2);
+  border-color: var(--rose);
+  border-radius: 50%;
+}
+
+/* Heater dots */
+.heater {
+  position: absolute;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* High tops */
+.hightop {
+  position: absolute;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: rgba(34,45,68,0.1);
+  border: 1px solid rgba(34,45,68,0.2);
+}
+
+/* Dance floor overlay */
+.dance-floor {
+  position: absolute;
+  border: 2px dashed var(--rose-lighter);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(196,143,127,0.05);
+}
+
+/* Schematic Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--platinum);
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #888;
+}
+.legend-swatch {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ── SEATING TOOL ── */
+.seating-section {
+  max-width: 900px;
+  margin: 36px auto 0;
+  padding: 0 16px 60px;
+}
+.seating-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.seating-header h2 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.seating-header p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Progress */
+.progress-bar-container {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 8px rgba(34,45,68,0.05);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.progress-text {
+  font-size: 0.85rem;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--platinum);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rose), var(--rose-dark));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* Instructions */
+.instructions {
+  background: var(--rose-light);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: var(--rose-dark);
+  text-align: center;
+  line-height: 1.6;
+  border: 1px solid var(--rose-lighter);
+}
+.instructions strong { color: var(--navy); }
+
+/* Guest Pool */
+.guest-pool {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 1px 8px rgba(34,45,68,0.05);
+  margin-bottom: 24px;
+}
+.guest-pool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.guest-pool-header h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+.guest-count-badge {
+  background: var(--rose-light);
+  color: var(--rose-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.guest-search {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--platinum);
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.guest-search:focus { border-color: var(--rose); }
+.guest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 2px;
+}
+.guest-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--champagne);
+  border: 1.5px solid var(--platinum);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.guest-chip:hover, .guest-chip.selected {
+  background: var(--rose-light);
+  border-color: var(--rose);
+  transform: translateY(-1px);
+}
+.guest-chip.selected {
+  box-shadow: 0 2px 8px rgba(196,143,127,0.3);
+}
+.guest-chip.dragging {
+  opacity: 0.5;
+}
+
+/* Tables Grid */
+.tables-grid {
+  display: grid;
+  gap: 16px;
+}
+.table-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 1px 8px rgba(34,45,68,0.05);
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.table-card:hover, .table-card.highlight {
+  border-color: var(--rose);
+  box-shadow: 0 4px 16px rgba(196,143,127,0.15);
+}
+.table-card.full {
+  border-color: var(--success);
+}
+.table-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.table-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+.table-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--platinum);
+  color: #888;
+}
+.table-count.full {
+  background: rgba(107,158,122,0.15);
+  color: var(--success);
+}
+.table-note {
+  font-size: 0.78rem;
+  color: var(--rose-dark);
+  font-style: italic;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  background: rgba(244,221,213,0.3);
+  border-radius: 6px;
+}
+.table-shape {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.shape-icon {
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.table-seats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-height: 32px;
+}
+.seated-guest {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.seated-guest:hover {
+  background: var(--rose-dark);
+  transform: translateY(-1px);
+}
+.seated-guest .remove-x {
+  margin-left: 6px;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.empty-seat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border: 1.5px dashed var(--platinum);
+  border-radius: 50%;
+  font-size: 0.6rem;
+  color: #ccc;
+}
+
+/* Sweetheart special */
+.table-card.sweetheart-card {
+  background: linear-gradient(135deg, rgba(244,221,213,0.3), rgba(196,143,127,0.1));
+  border: 2px solid var(--rose-lighter);
+}
+.table-card.sweetheart-card .table-name {
+  color: var(--rose-dark);
+}
+
+/* Actions */
+.actions {
+  margin-top: 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.btn {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(34,45,68,0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34,45,68,0.3);
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(34,45,68,0.25);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Notes */
+.venue-notes {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: 0 1px 8px rgba(34,45,68,0.05);
+  text-align: center;
+}
+.venue-notes h4 {
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.venue-notes p {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.7;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 32px 20px 40px;
+  font-size: 0.75rem;
+  color: #bbb;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 640px) {
+  .tables-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .table-card.sweetheart-card {
+    grid-column: 1 / -1;
+  }
+  .header h1 { font-size: 2.4rem; }
+  .venue-map { min-height: 480px; }
+}
+@media (max-width: 639px) {
+  .venue-map { min-height: 420px; }
+  .header { padding: 20px 16px 18px; }
+  .header h1 { font-size: 1.6rem; }
+  .zone-label { font-size: 0.7rem; }
+  .zone-detail { font-size: 0.55rem; }
+  .zone-emoji { font-size: 1rem; }
+  .garden-table { font-size: 0.5rem; }
+}
+
+/* Drag preview */
+.drag-preview {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  padding: 6px 14px;
+  background: var(--rose);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(196,143,127,0.4);
+  display: none;
+}
+
+/* GUEST LIST BUILDER */
+.guest-builder {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 24px 8px;
+  text-align: center;
+}
+.guest-builder h2 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.builder-subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.builder-input-row {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+  margin: 0 auto 14px;
+}
+.builder-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--platinum);
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.builder-input:focus { border-color: var(--rose); }
+.btn-add {
+  padding: 10px 18px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-add:hover { background: var(--rose-dark); }
+.btn-bulk { margin-top: 8px; }
+.builder-bulk-hint {
+  max-width: 420px;
+  margin: 0 auto 14px;
+  text-align: left;
+}
+.builder-bulk-hint summary {
+  font-size: 0.82rem;
+  color: var(--rose-dark);
+  cursor: pointer;
+  font-weight: 600;
+}
+.builder-bulk-hint p {
+  font-size: 0.82rem;
+  color: #888;
+  margin: 6px 0;
+}
+.builder-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--platinum);
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+}
+.builder-textarea:focus { border-color: var(--rose); }
+.builder-guests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+.builder-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  background: var(--white);
+  border: 1.5px solid var(--platinum);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.builder-chip:hover {
+  border-color: #e57373;
+  background: #FFF5F5;
+}
+.builder-chip .chip-x {
+  font-size: 0.75rem;
+  color: #bbb;
+  font-weight: 700;
+}
+.builder-chip:hover .chip-x { color: #e57373; }
+.builder-count {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.builder-divider {
+  max-width: 780px;
+  margin: 20px auto;
+  border: none;
+  border-top: 1px solid var(--platinum);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031638979/dJhlUfNtArbuYewS.png" alt="Our Little Wedding" class="header-logo">
+  <h1>Samantha &amp; Justine</h1>
+  <div class="subtitle">Seating Assignments</div>
+  <div class="date-venue">April 23, 2026 &middot; The Vault Garden</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <h2>Let's Set the Table!</h2>
+  <p>Your reception flows through four gorgeous spaces at The Vault Garden. Here's how it all comes together, plus a drag-and-drop tool to arrange your guests at dinner.</p>
+</div>
+
+<!-- VENUE SCHEMATIC -->
+<div class="schematic-section">
+  <h3 class="schematic-title">The Vault Garden &mdash; Venue Layout</h3>
+  <div class="schematic-wrapper">
+    <div class="venue-map" id="venueMap">
+      <!-- Compass -->
+      <div class="compass">
+        <span class="s">S</span>
+        <span class="e">E</span>
+        <span class="w">W</span>
+      </div>
+
+      <!-- Flow -->
+      <div class="flow-arrow">Entrance &#8594; Lounge &#8594; Bar &#8594; Garden &#8594; Alcove</div>
+
+      <!-- ENTRANCE ZONE -->
+      <div class="zone zone-entrance">
+        <span class="zone-emoji">📖</span>
+        <span class="zone-label">Entrance</span>
+        <span class="zone-detail">Welcome Table<br>Guestbook &amp; Photos</span>
+      </div>
+
+      <!-- LOUNGE ZONE -->
+      <div class="zone zone-lounge">
+        <span class="zone-emoji">🎵</span>
+        <span class="zone-label">Lounge</span>
+        <span class="zone-detail">Cocktail Hour &amp; DJ<br>Dance Floor After Dinner</span>
+        <!-- DJ -->
+        <div class="item" style="position:absolute; bottom:10px; left:12px;">
+          <span class="item-emoji">🎧</span>
+          <span class="item-label">DJ</span>
+        </div>
+        <!-- Dance floor -->
+        <div class="dance-floor" style="left:15%;top:38%;width:70%;height:40%;">
+          <span style="font-size:1.2rem;">💃</span>
+          <span style="font-size:0.55rem;color:var(--rose-dark);font-weight:600;">Dance Floor</span>
+        </div>
+      </div>
+
+      <!-- High tops in lounge -->
+      <div class="item" style="position:absolute; left:30%; top:6%;">
+        <div class="hightop" style="position:static;"></div>
+        <span class="item-label" style="font-size:0.5rem;color:#aaa;">High Top</span>
+      </div>
+      <div class="item" style="position:absolute; left:42%; top:6%;">
+        <div class="hightop" style="position:static;"></div>
+        <span class="item-label" style="font-size:0.5rem;color:#aaa;">High Top</span>
+      </div>
+
+      <!-- BAR ZONE -->
+      <div class="zone zone-bar">
+        <span class="zone-label">Bar</span>
+        <span class="zone-detail">🍸 Full Bar Service</span>
+      </div>
+
+      <!-- LONG GARDEN ZONE -->
+      <div class="zone zone-garden" id="gardenZone">
+        <span class="zone-label" style="position:absolute;top:6px;left:50%;transform:translateX(-50%);font-size:0.95rem;">Long Garden</span>
+        <span class="zone-detail" style="position:absolute;top:24px;left:50%;transform:translateX(-50%);white-space:nowrap;">Main Dining &middot; 12 ft wide &middot; Heaters between tables</span>
+
+        <!-- Sweetheart Table -->
+        <div class="garden-table sweetheart" style="left:42%;top:38%;width:16%;height:16%;border-radius:50%;">
+          💕 Sweetheart
+        </div>
+
+        <!-- 5 Long Tables -->
+        <div class="garden-table" style="left:4%;top:58%;width:88%;height:6%;">Table 1</div>
+        <div class="garden-table" style="left:4%;top:67%;width:88%;height:6%;">Table 2</div>
+        <div class="garden-table" style="left:4%;top:76%;width:88%;height:6%;">Table 3</div>
+        <div class="garden-table" style="left:4%;top:85%;width:88%;height:6%;">Table 4</div>
+        <div class="garden-table" style="left:4%;top:94%;width:88%;height:6%;">Table 5</div>
+
+        <!-- Heaters between tables -->
+        <div class="heater" style="left:2%;top:65%;">🔥</div>
+        <div class="heater" style="right:6%;top:65%;">🔥</div>
+        <div class="heater" style="left:2%;top:74%;">🔥</div>
+        <div class="heater" style="right:6%;top:74%;">🔥</div>
+        <div class="heater" style="left:2%;top:83%;">🔥</div>
+        <div class="heater" style="right:6%;top:83%;">🔥</div>
+        <div class="heater" style="left:2%;top:92%;">🔥</div>
+        <div class="heater" style="right:6%;top:92%;">🔥</div>
+      </div>
+
+      <!-- ALCOVE ZONE -->
+      <div class="zone zone-alcove">
+        <span class="zone-emoji">📸</span>
+        <span class="zone-label">Alcove</span>
+        <span class="zone-detail">Photobooth<br>8&times;8 Space + Power</span>
+      </div>
+
+      <!-- High tops near alcove -->
+      <div class="item" style="position:absolute; right:4%; top:48%;">
+        <div class="hightop" style="position:static;"></div>
+        <span class="item-label" style="font-size:0.5rem;color:#aaa;">High Top</span>
+      </div>
+      <div class="item" style="position:absolute; right:14%; top:48%;">
+        <div class="hightop" style="position:static;"></div>
+        <span class="item-label" style="font-size:0.5rem;color:#aaa;">High Top</span>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(244,221,213,0.5);"></div> Entrance</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(196,143,127,0.2);"></div> Lounge</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(34,45,68,0.1);"></div> Bar</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(107,158,122,0.15);"></div> Long Garden</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(212,160,84,0.2);"></div> Alcove</div>
+      <div class="legend-item">🔥 Heater</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(34,45,68,0.1);border-radius:50%;width:10px;height:10px;"></div> High Top</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUEST LIST BUILDER -->
+<div class="guest-builder" id="guestBuilder">
+  <h2>Step 1: Add Your Guests</h2>
+  <p class="builder-subtitle">Type each guest's first name and tap Add. Once your list is ready, scroll down to assign seats!</p>
+  <div class="builder-input-row">
+    <input type="text" id="guestNameInput" class="builder-input" placeholder="Guest's first name..." autocomplete="off" />
+    <button class="btn-add" id="btnAddGuest">Add</button>
+  </div>
+  <div class="builder-bulk-hint">
+    <details>
+      <summary>Adding multiple guests at once?</summary>
+      <p>Paste a list of names separated by commas or new lines:</p>
+      <textarea id="bulkInput" class="builder-textarea" rows="4" placeholder="e.g. Mom, Dad, Auntie Rose, Uncle James..."></textarea>
+      <button class="btn-add btn-bulk" id="btnBulkAdd">Add All</button>
+    </details>
+  </div>
+  <div class="builder-guests" id="builderGuestList"></div>
+  <div class="builder-count" id="builderCount"></div>
+</div>
+
+<hr class="builder-divider">
+
+<!-- SEATING TOOL -->
+<div class="seating-section">
+  <div class="seating-header">
+    <h2>Step 2: Seat Your Guests</h2>
+    <p>Tap a guest, then tap a table. Or just drag and drop!</p>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <strong>How it works:</strong> Pick a guest from the list below, then tap a table to seat them. To remove someone, tap their name at the table. Easy!
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-bar-container">
+    <div class="progress-text" id="progressText">0 of 50 guests seated</div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <!-- Guest Pool -->
+  <div class="guest-pool" id="guestPool">
+    <div class="guest-pool-header">
+      <h3>Guests</h3>
+      <span class="guest-count-badge" id="unassignedBadge">48 unassigned</span>
+    </div>
+    <input type="text" class="guest-search" id="guestSearch" placeholder="Search guests...">
+    <div class="guest-list" id="guestList"></div>
+  </div>
+
+  <!-- Tables -->
+  <div class="tables-grid" id="tablesGrid"></div>
+
+  <!-- Venue Notes -->
+  <div class="venue-notes">
+    <h4>About Your Reception</h4>
+    <p id="venueNotes"></p>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn btn-primary" id="sendBtn" onclick="copySeatingPlan()">Send to Jaime</button>
+    <button class="btn btn-secondary" onclick="resetAll()">Start Over</button>
+  </div>
+</div>
+
+<div class="footer">
+  Made with love by Our Little Wedding &middot; Samantha &amp; Justine &middot; April 23, 2026
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Drag Preview -->
+<div class="drag-preview" id="dragPreview"></div>
+
+<script>
+const CONFIG = {
+  coupleNames: "Samantha & Justine",
+  weddingDate: "April 23, 2026",
+  venueName: "The Vault Garden",
+  tables: [
+    { name: "Sweetheart Table", seats: 2, shape: "round", note: "Just the two of you! Repurposed ceremony florals underneath." },
+    { name: "Table 1", seats: 10, shape: "long" },
+    { name: "Table 2", seats: 10, shape: "long" },
+    { name: "Table 3", seats: 10, shape: "long" },
+    { name: "Table 4", seats: 10, shape: "long" },
+    { name: "Table 5", seats: 10, shape: "long" },
+  ],
+  guests: [],
+  preAssigned: {},
+  notes: "Your reception flows through three beautiful spaces: cocktail hour in the Lounge with DJ and dancing, a seated dinner in the Long Garden with 5 long tables and your sweetheart table, and a photobooth tucked in the Alcove. Heaters will be placed between the tables to keep everyone cozy!"
+};
+
+// State
+let assignments = {}; // tableName -> [guestNames]
+let selectedGuest = null;
+
+function init() {
+  // Initialize assignments
+  CONFIG.tables.forEach(t => {
+    assignments[t.name] = [];
+  });
+
+  // Pre-assign
+  Object.entries(CONFIG.preAssigned).forEach(([table, guests]) => {
+    guests.forEach(g => {
+      if (assignments[table] && assignments[table].length < getTableSeats(table)) {
+        assignments[table].push(g);
+      }
+    });
+  });
+
+  // Load from localStorage
+  const saved = localStorage.getItem('seating-samantha-justine');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      // Validate
+      let valid = true;
+      const allSavedGuests = [];
+      Object.entries(parsed).forEach(([table, guests]) => {
+        if (!assignments.hasOwnProperty(table)) valid = false;
+        guests.forEach(g => {
+          if (!CONFIG.guests.includes(g)) valid = false;
+          allSavedGuests.push(g);
+        });
+      });
+      if (valid && new Set(allSavedGuests).size === allSavedGuests.length) {
+        assignments = parsed;
+      }
+    } catch(e) {}
+  }
+
+  document.getElementById('venueNotes').textContent = CONFIG.notes;
+  render();
+}
+
+function getTableSeats(name) {
+  const t = CONFIG.tables.find(t => t.name === name);
+  return t ? t.seats : 0;
+}
+
+function getAssignedGuests() {
+  const all = [];
+  Object.values(assignments).forEach(arr => arr.forEach(g => all.push(g)));
+  return all;
+}
+
+function getUnassignedGuests() {
+  const assigned = new Set(getAssignedGuests());
+  return CONFIG.guests.filter(g => !assigned.has(g));
+}
+
+function save() {
+  localStorage.setItem('seating-samantha-justine', JSON.stringify(assignments));
+}
+
+function render() {
+  renderGuestPool();
+  renderTables();
+  renderProgress();
+  save();
+}
+
+function renderProgress() {
+  const seated = getAssignedGuests().length;
+  const total = CONFIG.guests.length;
+  const pct = Math.round((seated / total) * 100);
+  document.getElementById('progressText').textContent = `${seated} of ${total} guests seated`;
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  if (seated === total) {
+    document.getElementById('progressText').textContent = `All ${total} guests seated — you're all set!`;
+  }
+}
+
+function renderGuestPool() {
+  const unassigned = getUnassignedGuests();
+  const search = (document.getElementById('guestSearch').value || '').toLowerCase();
+  const filtered = unassigned.filter(g => g.toLowerCase().includes(search));
+  const list = document.getElementById('guestList');
+  list.innerHTML = '';
+
+  if (unassigned.length === 0) {
+    list.innerHTML = '<div style="padding:16px;text-align:center;color:#aaa;font-size:0.85rem;">Everyone is seated! 🎉</div>';
+  } else {
+    filtered.forEach(guest => {
+      const chip = document.createElement('div');
+      chip.className = 'guest-chip' + (selectedGuest === guest ? ' selected' : '');
+      chip.textContent = guest;
+      chip.draggable = true;
+      chip.addEventListener('click', () => selectGuest(guest));
+      chip.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', guest);
+        chip.classList.add('dragging');
+        // Show custom preview
+        const preview = document.getElementById('dragPreview');
+        preview.textContent = guest;
+        preview.style.display = 'block';
+        e.dataTransfer.setDragImage(preview, 0, 0);
+        setTimeout(() => { preview.style.display = 'none'; }, 0);
+      });
+      chip.addEventListener('dragend', () => {
+        chip.classList.remove('dragging');
+      });
+      list.appendChild(chip);
+    });
+  }
+
+  document.getElementById('unassignedBadge').textContent = unassigned.length + ' unassigned';
+}
+
+function renderTables() {
+  const grid = document.getElementById('tablesGrid');
+  grid.innerHTML = '';
+
+  CONFIG.tables.forEach(table => {
+    const seated = assignments[table.name];
+    const isFull = seated.length >= table.seats;
+    const isSweetheart = table.name === 'Sweetheart Table';
+
+    const card = document.createElement('div');
+    card.className = 'table-card' + (isSweetheart ? ' sweetheart-card' : '') + (isFull ? ' full' : '');
+
+    // Drag events
+    card.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      card.classList.add('highlight');
+    });
+    card.addEventListener('dragleave', () => {
+      card.classList.remove('highlight');
+    });
+    card.addEventListener('drop', (e) => {
+      e.preventDefault();
+      card.classList.remove('highlight');
+      const guest = e.dataTransfer.getData('text/plain');
+      if (guest) assignGuest(guest, table.name);
+    });
+
+    // Click to assign selected guest
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.seated-guest')) return;
+      if (selectedGuest) {
+        assignGuest(selectedGuest, table.name);
+      }
+    });
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'table-card-header';
+    const nameEl = document.createElement('div');
+    nameEl.className = 'table-name';
+    nameEl.textContent = (isSweetheart ? '💕 ' : '') + table.name;
+    const countEl = document.createElement('div');
+    countEl.className = 'table-count' + (isFull ? ' full' : '');
+    countEl.textContent = seated.length + ' / ' + table.seats;
+    header.appendChild(nameEl);
+    header.appendChild(countEl);
+    card.appendChild(header);
+
+    // Shape
+    const shape = document.createElement('div');
+    shape.className = 'table-shape';
+    shape.innerHTML = '<span class="shape-icon">' + (table.shape === 'round' ? '○ Round' : '▬ Long Table') + '</span>';
+    card.appendChild(shape);
+
+    // Note
+    if (table.note) {
+      const note = document.createElement('div');
+      note.className = 'table-note';
+      note.textContent = table.note;
+      card.appendChild(note);
+    }
+
+    // Seats
+    const seatsDiv = document.createElement('div');
+    seatsDiv.className = 'table-seats';
+
+    seated.forEach(guest => {
+      const gEl = document.createElement('div');
+      gEl.className = 'seated-guest';
+      gEl.innerHTML = guest + '<span class="remove-x">&times;</span>';
+      gEl.draggable = true;
+      gEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        unseatGuest(guest, table.name);
+      });
+      gEl.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', guest);
+        e.dataTransfer.setData('from-table', table.name);
+      });
+      seatsDiv.appendChild(gEl);
+    });
+
+    // Empty seats
+    for (let i = 0; i < table.seats - seated.length; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-seat';
+      empty.textContent = '+';
+      seatsDiv.appendChild(empty);
+    }
+
+    card.appendChild(seatsDiv);
+    grid.appendChild(card);
+  });
+}
+
+function selectGuest(name) {
+  selectedGuest = selectedGuest === name ? null : name;
+  render();
+}
+
+function assignGuest(guest, tableName) {
+  const seats = getTableSeats(tableName);
+  const current = assignments[tableName];
+
+  if (current.length >= seats) {
+    showToast('That table is full! Try another one.');
+    selectedGuest = null;
+    render();
+    return;
+  }
+
+  // Remove from any current table
+  Object.keys(assignments).forEach(t => {
+    assignments[t] = assignments[t].filter(g => g !== guest);
+  });
+
+  assignments[tableName].push(guest);
+  selectedGuest = null;
+  showToast(guest + ' seated at ' + tableName);
+  render();
+}
+
+function unseatGuest(guest, tableName) {
+  assignments[tableName] = assignments[tableName].filter(g => g !== guest);
+  showToast(guest + ' moved back to guest list');
+  render();
+}
+
+function resetAll() {
+  if (!confirm('Start fresh? This will unseat everyone except the couple at the Sweetheart Table.')) return;
+  CONFIG.tables.forEach(t => {
+    assignments[t.name] = [];
+  });
+  Object.entries(CONFIG.preAssigned).forEach(([table, guests]) => {
+    guests.forEach(g => assignments[table].push(g));
+  });
+  selectedGuest = null;
+  document.getElementById('guestSearch').value = '';
+  render();
+  showToast('All clear! Let\'s start fresh.');
+}
+
+function copySeatingPlan() {
+  const unassigned = getUnassignedGuests();
+  let text = '🪷 SEATING PLAN\n';
+  text += CONFIG.coupleNames + ' — ' + CONFIG.weddingDate + '\n';
+  text += CONFIG.venueName + '\n';
+  text += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+
+  CONFIG.tables.forEach(table => {
+    const guests = assignments[table.name];
+    text += table.name.toUpperCase() + ' (' + guests.length + '/' + table.seats + ')\n';
+    if (guests.length) {
+      guests.forEach(g => text += '  • ' + g + '\n');
+    } else {
+      text += '  (empty)\n';
+    }
+    text += '\n';
+  });
+
+  if (unassigned.length > 0) {
+    text += '⚠️ UNASSIGNED (' + unassigned.length + '):\n';
+    unassigned.forEach(g => text += '  • ' + g + '\n');
+    text += '\n';
+  }
+
+  text += '━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+  text += 'Total: ' + getAssignedGuests().length + ' seated, ' + unassigned.length + ' unassigned\n';
+
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('Seating plan copied! Paste it in a message to Jaime.');
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Seating plan copied!');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// Search
+document.getElementById('guestSearch').addEventListener('input', renderGuestPool);
+
+// Handle drag between tables
+document.addEventListener('drop', () => {});
+document.addEventListener('dragover', (e) => e.preventDefault());
+
+// ---- GUEST LIST MANAGEMENT ----
+const STORAGE_KEY_GUESTS = 'guestlist-samantha-justine';
+
+function loadGuestList() {
+  const saved = localStorage.getItem(STORAGE_KEY_GUESTS);
+  if (saved) {
+    try {
+      const list = JSON.parse(saved);
+      if (Array.isArray(list) && list.length > 0) {
+        CONFIG.guests = list;
+      }
+    } catch(e) {}
+  }
+}
+
+function saveGuestList() {
+  localStorage.setItem(STORAGE_KEY_GUESTS, JSON.stringify(CONFIG.guests));
+}
+
+function addGuestToList(name) {
+  name = name.trim();
+  if (!name) return false;
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+  if (CONFIG.guests.includes(name)) {
+    showToast(name + ' is already on the list!');
+    return false;
+  }
+  CONFIG.guests.push(name);
+  saveGuestList();
+  return true;
+}
+
+function removeGuestFromList(name) {
+  CONFIG.guests = CONFIG.guests.filter(g => g !== name);
+  // Also remove from any table assignments
+  Object.keys(assignments).forEach(t => {
+    assignments[t] = assignments[t].filter(g => g !== name);
+  });
+  saveGuestList();
+}
+
+function renderGuestBuilder() {
+  const list = document.getElementById('builderGuestList');
+  const count = document.getElementById('builderCount');
+  if (!list) return;
+
+  list.innerHTML = '';
+  CONFIG.guests.forEach(name => {
+    const chip = document.createElement('div');
+    chip.className = 'builder-chip';
+    chip.innerHTML = name + ' <span class="chip-x">&times;</span>';
+    chip.addEventListener('click', () => {
+      removeGuestFromList(name);
+      renderGuestBuilder();
+      render();
+    });
+    list.appendChild(chip);
+  });
+
+  const total = CONFIG.guests.length;
+  const maxSeats = CONFIG.tables.reduce((sum, t) => sum + t.seats, 0);
+  if (total === 0) {
+    count.textContent = 'No guests added yet. Start typing above!';
+  } else {
+    count.textContent = total + ' guest' + (total !== 1 ? 's' : '') + ' added (' + maxSeats + ' seats available)';
+    if (total > maxSeats) {
+      count.textContent += ' \u2014 heads up, that\'s more than your table seats!';
+      count.style.color = '#D4A054';
+    } else {
+      count.style.color = '';
+    }
+  }
+}
+
+function initGuestBuilder() {
+  const input = document.getElementById('guestNameInput');
+  const addBtn = document.getElementById('btnAddGuest');
+  const bulkInput = document.getElementById('bulkInput');
+  const bulkBtn = document.getElementById('btnBulkAdd');
+
+  function doAdd() {
+    if (addGuestToList(input.value)) {
+      input.value = '';
+      renderGuestBuilder();
+      render();
+    }
+    input.focus();
+  }
+
+  addBtn.addEventListener('click', doAdd);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') doAdd();
+  });
+
+  bulkBtn.addEventListener('click', () => {
+    const raw = bulkInput.value;
+    const names = raw.split(/[,\n]+/).map(n => n.trim()).filter(n => n.length > 0);
+    let added = 0;
+    names.forEach(n => { if (addGuestToList(n)) added++; });
+    bulkInput.value = '';
+    if (added > 0) {
+      showToast(added + ' guest' + (added !== 1 ? 's' : '') + ' added!');
+      renderGuestBuilder();
+      render();
+    }
+  });
+
+  renderGuestBuilder();
+}
+
+// Init
+loadGuestList();
+init();
+initGuestBuilder();
+</script>
+</body>
+</html>
